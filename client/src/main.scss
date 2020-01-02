@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Ibarra+Real+Nova|Raleway&display=swap');
+ $sans-font: 'Raleway', sans-serif;
+ $serif-font: 'Ibarra Real Nova', serif;
+
+body {
+    margin: 0;
+  }
+  
+#main-nav-bar {
+    display: flex;
+    background-color: #021342;
+    height: 15vh;
+    img {
+        display: inline-block;
+        height: 100%;
+    }
+}
+
+#about-section-container {
+    display: flex;
+    height: 85vh;
+    width: 100vw;
+    background-image: url("about-background-image.jpg");
+    background-size: 75vh auto;
+    background-position: center;
+    text-align: center;
+    color: whitesmoke;
+
+}
+
+#about-text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    h1 {
+        font-family: $serif-font;
+    }
+    
+    div {
+        width: 60vw;
+        height: 42vh;
+        padding: 0 4vw;
+        font-family: $sans-font;
+    }
+    
+}
+
