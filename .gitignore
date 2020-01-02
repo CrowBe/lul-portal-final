@@ -1,6 +1,6 @@
 api/node_modules
 client/node_modules
 
-api/.env
-client/.env
+api/env
+client/env
 client/build
