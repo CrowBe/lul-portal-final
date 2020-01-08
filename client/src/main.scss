@@ -1,14 +1,25 @@
 @import url('https://fonts.googleapis.com/css?family=Ibarra+Real+Nova|Raleway&display=swap');
- $sans-font: 'Raleway', sans-serif;
- $serif-font: 'Ibarra Real Nova', serif;
+ 
+// Currently used fonts and brand colours
+// sans-serif font for most headings
+$sans-font: 'Raleway', sans-serif;
+// serif font for most text
+$serif-font: 'Ibarra Real Nova', serif;
+
+// Brand/Logo colours
+$brand-navy-blue: #021342;
+$brand-white: whitesmoke;
+$brand-lime-green: #94d60a;
 
 body {
     margin: 0;
   }
+
+// Nav Bar styling
   
 #main-nav-bar {
     display: flex;
-    background-color: #021342;
+    background-color: $brand-navy-blue;
     height: 15vh;
     img {
         display: inline-block;
@@ -16,32 +27,149 @@ body {
     }
 }
 
+// Home Page Sections
+
+// About Section styling
+
 #about-section-container {
     display: flex;
-    height: 85vh;
+    height: 75vh;
     width: 100vw;
     background-image: url("about-background-image.jpg");
     background-size: 75vh auto;
     background-position: center;
     text-align: center;
-    color: whitesmoke;
+    color: $brand-white;
 
 }
 
 #about-text-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     h1 {
         font-family: $serif-font;
     }
     
     div {
         width: 60vw;
-        height: 42vh;
         padding: 0 4vw;
         font-family: $sans-font;
     }
-    
+
+    p {
+        font-size: 2.5vh;
+    }
+
+    span {
+        font-style: italic;
+        color: $brand-lime-green;
+    }
+
+    #about-page-link {
+        position: fixed;
+        bottom: 12vh;
+        left: 0;
+        width: 60vw;
+        text-align: center;
+        a {
+            color: $brand-lime-green;
+            background-color: rgba(0, 0, 0, 0.253);
+            padding: 3px;
+            border-radius: 10%;
+            text-decoration: unset;
+        }
+     }
 }
 
+#about-icons-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-top: 2vh;
+    div {
+        img {
+            display: block;
+            height: 9vh;
+            padding: 1vh;
+            border: 1px solid $brand-lime-green;
+            background-color: rgba(0, 0, 0, 0.527);
+            border-radius: 50%;
+        }
+        h3 {
+            margin-top: 2px;
+        }
+    }
+}
+
+
+// Project Section Styling
+
+#project-section-container {
+    display: flex;
+    height: 75vh;
+    justify-content: space-evenly;
+    .project-image-grid {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        img {
+            display: block;
+            height: 20vh;
+        }
+        .project-image-text {
+            position: absolute;
+        }
+    }
+}
+
+#home-nav-sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: fixed;
+    right: 0;
+    bottom: 50%;
+    margin-bottom: -14vh;
+    border-radius: 15px 0 0 15px;
+    overflow: hidden;
+    span {
+        display: none;
+    }
+    div {
+        height: 7vh;
+        width: 7vw;
+        background-color: $brand-lime-green;
+    }
+    .current-location {
+        box-shadow: inset 0 0 5px 10px $brand-lime-green;
+        background-color: white;
+    }
+}
+
+
+// About Page Styling
+
+#about-page {
+    height: 75vh;
+    overflow: scroll;
+    h2 {
+        font-family: $sans-font;
+    }
+    p {
+        font-family: $serif-font;
+        span {
+            font-weight: bolder;
+        }
+    }
+}
+
+#sitewide-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 10vh;
+    background-color: $brand-navy-blue;
+    color: $brand-white;
+    text-align: center;
+}

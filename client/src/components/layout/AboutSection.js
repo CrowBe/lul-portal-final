@@ -1,4 +1,10 @@
 import React from 'react';
+import { Link } from "react-router-dom";
+
+const designLogo = process.env.PUBLIC_URL + './assets/design-logo.png';
+const constructLogo = process.env.PUBLIC_URL + './assets/construct-logo.png';
+const gardenLogo = process.env.PUBLIC_URL + './assets/garden-logo.png';
+const maintainLogo = process.env.PUBLIC_URL + './assets/maintain-logo.png';
 
 const AboutSection = () => {
     return (
@@ -6,26 +12,32 @@ const AboutSection = () => {
             <div id="about-text-container">
                 
                 <div id="about-section-summary">
-                    <h1>Who We Are</h1>
                     <p>
-                        A family owned business, providing a full range of Landscaping Services
-                        to the Central Coast, Lake Macquarie, Newcastle and The Hunter Valley
+                        A family owned business with a history of <span>Integrity</span>,
+                        the experience to upgrade your outdoor space with <span>Excellence</span>,
+                        and an attitude of <span>Genuine Care</span> for every customer.
                     </p>
                 </div>
-                <div id="about-section-values">
-                    <h1>
-                        Our Values
-                    </h1>
-                    <p>We are committed to deliver a quality product with:</p>
-                    <ul>
-                        <li>Integrity</li>
-                        <li>Excellence</li>
-                        <li>Genuine Care</li>
-                    </ul>
-                </div>
+                <div id="about-page-link"><Link to="/about-page">Learn more about us...</Link></div>
+                
             </div>
             <div id="about-icons-container">
-                
+                <div>
+                    <img src={designLogo} alt="A set of three different types of rulers used for paper design drawings" />
+                    <h3>Design</h3>
+                </div>
+                <div >
+                    <img src={constructLogo} alt="A construction hammer" />
+                    <h3>Construct</h3>
+                </div>
+                <div >
+                    <img src={gardenLogo} alt="A set of three different gardening shovels and spades" />
+                    <h3>Garden</h3>
+                </div>
+                <div >
+                    <img src={maintainLogo} alt="Two shifter wrenches" />
+                    <h3>Maintain</h3>
+                </div>
             </div>
         </section>
     )

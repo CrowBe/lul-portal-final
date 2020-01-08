@@ -11,9 +11,8 @@ const ExternalApi = () => {
       const token = await getTokenSilently({
           audience: process.env.REACT_APP_AUTH_AUDIENCE,
           scope: process.env.REACT_APP_AUTH_ADMIN,
-          redirect_uri: 'http://localhost:3000/'
+          redirect_uri: 'http://localhost:3000/portal'
         });
-      console.log(token);
 
       const response = await fetch("http://localhost:3001/api/external", {
         headers: {

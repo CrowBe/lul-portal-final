@@ -8,8 +8,7 @@ import dotenv from 'dotenv';
 import history from './utils/history';
 dotenv.config();
 
-// A function that routes the user to the right place
-// after login
+// A function that routes the user to the right place after login
 const onRedirectCallback = appState => {
   history.push(
     appState && appState.targetUrl
@@ -22,7 +21,7 @@ ReactDOM.render(
   <Auth0Provider
     domain={process.env.REACT_APP_AUTH_DOMAIN}
     client_id={process.env.REACT_APP_AUTH_CLIENT_ID}
-    redirect_uri={window.location.origin}
+    redirect_uri={`${window.location.origin}/portal`}
     onRedirectCallback={onRedirectCallback}
     audience={process.env.REACT_APP_AUTH_AUDIENCE}
   >
