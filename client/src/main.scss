@@ -27,7 +27,34 @@ body {
     }
 }
 
-// Home Page Sections
+// HOME PAGE STYLING
+
+
+#home-sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: fixed;
+    right: 0;
+    bottom: 50%;
+    margin-bottom: -14vh;
+    border-radius: 15px 0 0 15px;
+    overflow: hidden;
+    span {
+        display: none;
+    }
+    div {
+        height: 7vh;
+        width: 7vw;
+        background-color: $brand-lime-green;
+        transition: box-shadow 2s, background-color 2s;
+    }
+    .current-link {
+        box-shadow: inset 0 0 5px 10px $brand-lime-green;
+        background-color: white;
+    }
+}
+
 
 // About Section styling
 
@@ -117,38 +144,33 @@ body {
             display: block;
             height: 20vh;
         }
-        .project-image-text {
-            position: absolute;
-        }
     }
-}
-
-#home-nav-sidebar {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    position: fixed;
-    right: 0;
-    bottom: 50%;
-    margin-bottom: -14vh;
-    border-radius: 15px 0 0 15px;
-    overflow: hidden;
-    span {
-        display: none;
+    .project-image-container {
+        position: relative;
     }
-    div {
-        height: 7vh;
-        width: 7vw;
-        background-color: $brand-lime-green;
+    .project-image-text {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0.05;
+        top: 0;
+        left: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        background-color: $brand-white;
+        color: $brand-navy-blue;
+        font-family: $serif-font;
+        transition: opacity 3s;
     }
-    .current-location {
-        box-shadow: inset 0 0 5px 10px $brand-lime-green;
-        background-color: white;
+    .hover {
+        opacity: 0.95;
     }
 }
 
 
-// About Page Styling
+// ABOUT PAGE STYLING
 
 #about-page {
     height: 75vh;
@@ -172,4 +194,14 @@ body {
     background-color: $brand-navy-blue;
     color: $brand-white;
     text-align: center;
+}
+
+
+// MEDIA BREAKPOINT STYLING
+
+
+@media (max-width: 768px) {
+    .VideoBg-module_video__2IPmN {
+        display: unset;
+    }
 }
