@@ -13,6 +13,10 @@ body {
   height: 100%;
 }
 
+#home-page-wrapper {
+  transition: body 2s;
+}
+
 #home-sidebar {
   display: flex;
   flex-direction: column;
@@ -36,6 +40,44 @@ body {
 #home-sidebar .current-link {
   box-shadow: inset 0 0 5px 10px #94d60a;
   background-color: white;
+}
+
+.main-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.main-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.main-exit {
+  opacity: 1;
+}
+
+.main-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.VideoBg-module_video__2IPmN {
+  display: unset;
+}
+
+#main-section-layout {
+  height: 75vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Raleway", sans-serif;
+  color: whitesmoke;
+}
+#main-section-layout h1 {
+  text-align: center;
 }
 
 #about-section-container {
@@ -132,8 +174,8 @@ body {
   width: 100%;
   background-color: whitesmoke;
   color: #021342;
-  font-family: "Ibarra Real Nova", serif;
-  transition: opacity 3s;
+  font-family: "Raleway", sans-serif;
+  transition: opacity 2.5s;
 }
 #project-section-container .hover {
   opacity: 0.95;
@@ -161,12 +203,6 @@ body {
   background-color: #021342;
   color: whitesmoke;
   text-align: center;
-}
-
-@media (max-width: 768px) {
-  .VideoBg-module_video__2IPmN {
-    display: unset;
-  }
 }
 
 /*# sourceMappingURL=main.css.map */

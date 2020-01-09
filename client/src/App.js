@@ -21,7 +21,7 @@ const App = () => {
           <PrivateRoute path="/portal/profile" component={Profile} exact/>
           <PrivateRoute path="/portal/external-api" component={ExternalApi} exact/>
           <Route path="/about-page" component={AboutPage} />
-          <Route path="/" component={HomePage}/>
+          <Route path="/" component={HomePage} />
         </Switch>
       </Router>
       <footer id="sitewide-footer">

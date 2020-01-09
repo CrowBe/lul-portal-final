@@ -11,6 +11,8 @@ $brand-navy-blue: #021342;
 $brand-white: whitesmoke;
 $brand-lime-green: #94d60a;
 
+// Generic styling
+
 body {
     margin: 0;
   }
@@ -28,6 +30,10 @@ body {
 }
 
 // HOME PAGE STYLING
+
+#home-page-wrapper {
+    transition: body 2s;
+}
 
 
 #home-sidebar {
@@ -52,6 +58,47 @@ body {
     .current-link {
         box-shadow: inset 0 0 5px 10px $brand-lime-green;
         background-color: white;
+    }
+}
+
+
+// Home page transition classes 
+
+.main-enter {
+    opacity: 0;
+    transform: scale(0.9);
+}
+.main-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 300ms, transform 300ms;
+}
+.main-exit {
+    opacity: 1;
+}
+.main-exit-active {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 300ms, transform 300ms;
+}
+
+
+// Main Section styling
+
+.VideoBg-module_video__2IPmN {
+    display: unset;
+}
+
+#main-section-layout {
+    height: 75vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $sans-font;
+    color: $brand-white;
+    h1 {
+        text-align: center;
     }
 }
 
@@ -161,8 +208,8 @@ body {
         width: 100%;
         background-color: $brand-white;
         color: $brand-navy-blue;
-        font-family: $serif-font;
-        transition: opacity 3s;
+        font-family: $sans-font;
+        transition: opacity 2.5s;
     }
     .hover {
         opacity: 0.95;
@@ -200,8 +247,6 @@ body {
 // MEDIA BREAKPOINT STYLING
 
 
-@media (max-width: 768px) {
-    .VideoBg-module_video__2IPmN {
-        display: unset;
-    }
+@media (min-width: 768px) {
+    
 }

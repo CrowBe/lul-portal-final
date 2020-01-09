@@ -31,7 +31,7 @@ const ProjectSection = () => {
             } else {
                 setNumber(1);
             }
-          }, 5000);
+          }, 4000);
     }
 
     useEffect(() => {
