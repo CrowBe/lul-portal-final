@@ -1,30 +1,76 @@
-import React, { Component, useState, useEffect } from 'react';
-import { Route, Switch, useLocation, useParams} from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { CSSTransition } from 'react-transition-group';
+import HomeNavbar from '../common/HomeNavbar';
 import MainSection from '../layout/MainSection';
 import ProjectSection from '../layout/ProjectSection';
 import AboutSection from '../layout/AboutSection';
-import HomeNavbar from '../common/HomeNavbar';
-import { CSSTransition } from 'react-transition-group';
+import StaffSection from '../layout/StaffSection';
+import { debounce } from 'throttle-debounce';
 
-const scrollEventLogger = (event) => console.log(event)
+const HomePage = () => {
+    const [position, setPosition] = useState(0);
+    const [inProp, setInProp] = useState(false);
+    // These variables are used in combination with the scroll handler
+    // to simulate route changing on scroll.
+    const componentOptions = [
+        MainSection, ProjectSection, 
+        AboutSection, StaffSection
+    ];
+    const CurrentComponent = componentOptions[position];
 
+    // The scroll handler recursively removes itself to ensure it is not
+    // called multiple times on wheel or swipe
 
+    const scrollHandler = debounce(300, ((e) => {
+        
+        console.log("1")
+        if (e.deltaY > 0) {
+            if (position < 3) {
+                setPosition(position + 1);
+                setInProp(true)
+            }
+        } else if (position > 0) {
+            setPosition(position - 1);
+            setInProp(true)
+        }
+        e.target.removeEventListener(e.type, scrollHandler)
+    }));
 
-class HomePage extends Component {
-
-render() {
+    const linkIndicator = async () => {
+        let links = await document.getElementsByClassName("home-sidebar-button")
+        for (let link of links) {
+            if (link.id !== `link-${position}`) {
+                link.classList.remove("current-link")
+            } else if (link.id === `link-${position}`) {
+                link.classList.add("current-link")
+            }
+        } 
+    }
+    
+    // The use effect hook is given a set timout before adding the handler so that the scroll handler
+    // isn't immediately added on load. This avoids skipping pages on a fast load.
+    useEffect(() => {
+        const addScrollListener = async () => {
+            let wrapper = await document.getElementById("home-page-wrapper");
+            wrapper.addEventListener('wheel', scrollHandler)
+            wrapper.addEventListener('touchmove', scrollHandler)
+        }
+        linkIndicator();
+        addScrollListener()
+    })
+    
     return (
-        <div className="home-page-wrapper" onWheel={scrollEventLogger} onTouchMove={scrollEventLogger} >
-            <HomeNavbar />
-            <Switch>
-                <Route path={this.props.match.url} exact component={MainSection}/>
-                <Route path={`${this.props.match.url}projects`} exact={true} component={ProjectSection} />
-                <Route path={`${this.props.match.url}about`} component={AboutSection} />
-                {/* <Route path={`${match.url}/staff`} exact={true} component={careers} /> */}
-            </Switch>
+        <CSSTransition
+        in={inProp}
+        timeout={200}
+        classNames="section"
+    >
+        <div id="home-page-wrapper">
+            <HomeNavbar setter={setPosition}/>
+            <CurrentComponent />
         </div>
+    </CSSTransition>
     )
-}
 };
 
 export default HomePage;

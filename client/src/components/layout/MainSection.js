@@ -6,7 +6,7 @@ const poster = 'https://i1.wp.com/lookinguplandscapes.com.au/wp-content/uploads/
 
 const MainSection = () => {
     return (
-        <div id="main-section-layout">
+        <div id="main-section-container">
             <VideoBg poster={poster}>
                 <VideoBg.Source src={videoURL} type="video/mp4" />
                 Your browser does not support this content

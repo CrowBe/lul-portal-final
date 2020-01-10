@@ -46,7 +46,11 @@ body {
     margin-bottom: -14vh;
     border-radius: 15px 0 0 15px;
     overflow: hidden;
+    text-align: center;
+    text-decoration: none;
+    color: $brand-navy-blue;
     span {
+        margin: auto;
         display: none;
     }
     div {
@@ -54,6 +58,8 @@ body {
         width: 7vw;
         background-color: $brand-lime-green;
         transition: box-shadow 2s, background-color 2s;
+        display: flex;
+        justify-content: center;
     }
     .current-link {
         box-shadow: inset 0 0 5px 10px $brand-lime-green;
@@ -64,19 +70,19 @@ body {
 
 // Home page transition classes 
 
-.main-enter {
+.section-enter {
     opacity: 0;
     transform: scale(0.9);
 }
-.main-enter-active {
+.section-enter-active {
     opacity: 1;
     transform: translateX(0);
     transition: opacity 300ms, transform 300ms;
 }
-.main-exit {
+.section-exit {
     opacity: 1;
 }
-.main-exit-active {
+.section-exit-active {
     opacity: 0;
     transform: scale(0.9);
     transition: opacity 300ms, transform 300ms;
@@ -89,7 +95,7 @@ body {
     display: unset;
 }
 
-#main-section-layout {
+#main-section-container {
     height: 75vh;
     width: 100vw;
     display: flex;
@@ -248,5 +254,11 @@ body {
 
 
 @media (min-width: 768px) {
-    
+    #home-sidebar {
+        span {
+            display: unset;
+            font-family: $sans-font;
+            
+        }
+    }
 }
