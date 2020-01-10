@@ -115,7 +115,7 @@ body {
     display: flex;
     height: 75vh;
     width: 100vw;
-    background-image: url("about-background-image.jpg");
+    background-image: url("about-backdrop.jpg");
     background-size: 75vh auto;
     background-position: center;
     text-align: center;
@@ -253,12 +253,29 @@ body {
 // MEDIA BREAKPOINT STYLING
 
 
-@media (min-width: 768px) {
+@media only screen and (min-width: 768px) {
+
     #home-sidebar {
         span {
             display: unset;
             font-family: $sans-font;
-            
         }
+    }
+
+    #project-section-container {
+        flex-direction: column;
+        .project-image-grid {
+            flex-direction: row;
+        }
+        img {
+            height: 30vh;
+            width: auto;
+        }
+    }
+
+    #about-section-container {
+        background-image: url(widescreen-about-backdrop.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 }
