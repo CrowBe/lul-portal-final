@@ -175,6 +175,7 @@ body {
 }
 #project-section-container .project-image-container {
   position: relative;
+  box-shadow: 0 0 6px #021342;
 }
 #project-section-container .project-image-text {
   position: absolute;
@@ -273,9 +274,9 @@ body {
 
 .staff-card {
   display: flex;
-  border: solid 2px #021342;
   border-radius: 5px;
   background-color: whitesmoke;
+  box-shadow: 0 0 6px #021342;
 }
 
 .staff-card-image {
@@ -305,6 +306,7 @@ body {
 }
 
 .staff-section-footer {
+  display: flex;
   height: 35vh;
   background-color: #021342;
   color: whitesmoke;
@@ -314,6 +316,13 @@ body {
 }
 .staff-section-footer .contact-details-container h4 {
   display: block;
+  text-align: center;
+}
+.staff-section-footer .contact-hours-container {
+  justify-content: flex-start;
+}
+.staff-section-footer .contact-hours-container h4 {
+  margin-top: 2vh;
 }
 
 .legal-information-container {
@@ -344,8 +353,10 @@ body {
 .contact-page-container {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   color: #021342;
   font-family: "Ibarra Real Nova", serif;
+  height: 75vh;
 }
 
 .contact-section-one {
@@ -358,6 +369,7 @@ body {
   text-align: center;
   font-size: 1.5vh;
   font-family: "Raleway", sans-serif;
+  font-style: italic;
 }
 
 .contact-form-container {
@@ -368,6 +380,7 @@ body {
   border: solid 1px #021342;
   border-radius: 30%;
   padding: 0 1vw 3vh;
+  box-shadow: 0 0 6px #021342;
 }
 .contact-form-container h2 {
   margin-bottom: 0;
@@ -420,9 +433,11 @@ body {
   width: 42vw;
   border-radius: 10px;
   padding-left: 2vw;
+  box-shadow: 0 0 6px #021342;
 }
 .contact-details-container h4 {
-  display: none;
+  text-align: center;
+  margin: 2vh 0 0;
 }
 
 .contact-info-card {
@@ -440,6 +455,12 @@ body {
   padding-left: 2vw;
   width: 30vw;
   font-size: 2vh;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.contact-info-card p:hover {
+  overflow: visible;
 }
 
 #weekdays {
@@ -474,6 +495,7 @@ body {
   border: solid 0.5px #021342;
   width: 42vw;
   border-radius: 10px;
+  box-shadow: 0 0 6px #021342;
 }
 
 .contact-hours-grid {
@@ -547,6 +569,95 @@ body {
 
   .staff-card-image {
     height: 25vh;
+  }
+
+  .contact-page-container {
+    flex-direction: row-reverse;
+    height: 75vh;
+    font-size: larger;
+  }
+
+  .contact-section-one {
+    display: flex;
+    width: 50vw;
+    height: 70vh;
+    justify-content: center;
+    flex-direction: column;
+    margin: 2vh 0;
+  }
+  .contact-section-one p {
+    width: 35vw;
+    font-size: 2.5vh;
+    padding-bottom: 1vh;
+  }
+
+  .contact-info-container {
+    flex-direction: column;
+    align-items: center;
+    height: 75vh;
+  }
+  .contact-info-container .contact-details-container {
+    width: 35vw;
+    padding-left: 0;
+  }
+  .contact-info-container .contact-details-container .contact-info-card {
+    margin: 2vh 0 2vh 6vh;
+  }
+  .contact-info-container .contact-details-container h4 {
+    display: block;
+    text-align: center;
+  }
+  .contact-info-container .contact-details-container p {
+    font-size: 2.5vh;
+  }
+  .contact-info-container .contact-hours-container {
+    width: 35vw;
+    text-align: center;
+  }
+  .contact-info-container .contact-hours-container span {
+    font-size: 3vh;
+  }
+
+  .contact-form-container {
+    border-radius: 25px;
+    width: 48vw;
+    height: 45vh;
+  }
+
+  .contact-form {
+    grid-template-columns: 8vw 8vw 2vw 8vw 12vw;
+    grid-template-rows: 4vh 4vh 4vh 6vh;
+  }
+  .contact-form button {
+    padding: 2vh;
+  }
+
+  .staff-section-footer {
+    font-family: "Raleway", sans-serif;
+  }
+  .staff-section-footer h4 {
+    font-size: x-large;
+  }
+  .staff-section-footer .contact-details-container {
+    width: 30vw;
+  }
+  .staff-section-footer .contact-details-container .contact-info-card {
+    font-size: 3vh;
+  }
+  .staff-section-footer .contact-details-container .contact-info-card p {
+    font-size: 3vh;
+  }
+  .staff-section-footer .contact-hours-container {
+    width: 30vw;
+  }
+  .staff-section-footer .contact-hours-container .contact-hours-grid {
+    grid-template-columns: 10vw 1vw 10vw;
+    font-size: 3vh;
+  }
+
+  #staff-footer-logo {
+    height: 15vh;
+    bottom: 5vh;
   }
 }
 

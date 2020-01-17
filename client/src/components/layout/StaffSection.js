@@ -1,5 +1,6 @@
 import React from 'react';
-import ContactInfo from '../layout/ContactInfo';
+import ContactHours from '../common/ContactHours';
+import ContactDetails from '../common/ContactDetails';
 
 const staffPhotoBel = process.env.PUBLIC_URL + './assets/bel-profile-headshot.jpg';
 const staffPhotoJon = process.env.PUBLIC_URL + './assets/jon-profile-headshot.jpg';
@@ -35,7 +36,8 @@ const StaffSection = () => {
                 </div>
             </div>
             <div className="staff-section-footer">
-                <ContactInfo />
+                <ContactDetails />
+                <ContactHours />
                 <img src={whiteLogoNavy} id="staff-footer-logo" alt="Outline of house with a leaf incorporated into the lines. The words Looking Up Landscapes in bold."/>
             </div>
         </section>

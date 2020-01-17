@@ -197,7 +197,9 @@ body {
     }
     .project-image-container {
         position: relative;
+        box-shadow: 0 0 6px $brand-navy-blue;
     }
+
     .project-image-text {
         position: absolute;
         display: flex;
@@ -306,9 +308,9 @@ body {
 
 .staff-card {
     display: flex;
-    border: solid 2px $brand-navy-blue;
     border-radius: 5px;
     background-color: $brand-white;
+    box-shadow: 0 0 6px $brand-navy-blue;
 }
 
 .staff-card-image {
@@ -338,6 +340,7 @@ body {
 }
 
 .staff-section-footer {
+    display: flex;
     height: 35vh;
     background-color: $brand-navy-blue;
     color: $brand-white;
@@ -347,6 +350,13 @@ body {
     .contact-details-container {
         h4 {
             display: block;
+            text-align: center;
+        }
+    }
+    .contact-hours-container {
+        justify-content: flex-start;
+        h4 {
+            margin-top: 2vh;
         }
     }
 }
@@ -386,8 +396,10 @@ body {
 .contact-page-container {
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     color: $brand-navy-blue;
     font-family: $serif-font;
+    height: 75vh;
 }
 
 .contact-section-one {
@@ -399,6 +411,7 @@ body {
         text-align: center;
         font-size: 1.5vh;
         font-family: $sans-font;
+        font-style: italic;
     }
 }
 
@@ -410,6 +423,7 @@ body {
     border: solid 1px $brand-navy-blue;
     border-radius: 30%;
     padding: 0 1vw 3vh;
+    box-shadow: 0 0 6px $brand-navy-blue;
     h2 {
         margin-bottom: 0;
     }
@@ -464,8 +478,10 @@ body {
     width: 42vw;
     border-radius: 10px;
     padding-left: 2vw;
+    box-shadow: 0 0 6px $brand-navy-blue;
     h4 {
-        display: none;
+        text-align: center;
+        margin: 2vh 0 0;
     }
 }
 
@@ -483,6 +499,12 @@ body {
         padding-left: 2vw;
         width: 30vw;
         font-size: 2vh;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        &:hover {
+            overflow: visible;
+        }
     }
 }
 
@@ -518,6 +540,7 @@ body {
     border: solid .5px $brand-navy-blue;
     width: 42vw;
     border-radius: 10px;
+    box-shadow: 0 0 6px $brand-navy-blue;
 }
 
 .contact-hours-grid {
@@ -604,6 +627,91 @@ body {
 
     .staff-card-image {
         height: 25vh;
+    }
+
+    .contact-page-container {
+        flex-direction: row-reverse;
+        height: 75vh;
+        font-size: larger;
+    }
+
+    .contact-section-one {
+        display: flex;
+        width: 50vw;
+        height: 70vh;
+        justify-content: center;
+        flex-direction: column;
+        margin: 2vh 0;
+        p {
+            width: 35vw;
+            font-size: 2.5vh;
+            padding-bottom: 1vh;
+        }
+    }
+    .contact-info-container {
+        flex-direction: column;
+        align-items: center;
+        height: 75vh;
+        .contact-details-container {
+            width: 35vw;
+            padding-left: 0;
+            .contact-info-card {
+                margin: 2vh 0 2vh 6vh;
+            }
+            h4 {
+                display: block;
+                text-align: center;
+            }
+            p {
+                font-size: 2.5vh;
+            }
+        }
+        .contact-hours-container {
+            width: 35vw;
+            text-align: center;
+            span {
+                font-size: 3vh;
+            }
+        }
+    }
+    .contact-form-container {
+        border-radius: 25px;
+        width: 48vw;
+        height: 45vh;
+    }
+    .contact-form {
+        grid-template-columns: 8vw 8vw 2vw 8vw 12vw;
+        grid-template-rows: 4vh 4vh 4vh 6vh;
+        button {
+            padding: 2vh;
+        }
+    }
+    .staff-section-footer {
+        font-family: $sans-font;
+        h4 {
+            font-size: x-large;
+        }
+        .contact-details-container {
+            width: 30vw;
+            .contact-info-card {
+                font-size: 3vh;
+                p {
+                    font-size: 3vh;
+                }
+            }
+            
+        }
+        .contact-hours-container {
+            width: 30vw;
+            .contact-hours-grid {
+                grid-template-columns: 10vw 1vw 10vw;
+                font-size: 3vh;
+            }
+        }
+    }
+    #staff-footer-logo {
+        height: 15vh;
+        bottom: 5vh;
     }
 
 }
