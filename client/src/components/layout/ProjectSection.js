@@ -13,7 +13,6 @@ const ProjectSection = () => {
 
     const imageTransition = async () => {
         let currentImage = await document.getElementById(`image-${number}`);
-        currentImage.classList.toggle("hover");
         setTimeout(() => {
             currentImage.classList.toggle("hover")
             if (number < 6) {
@@ -21,7 +20,8 @@ const ProjectSection = () => {
             } else {
                 setNumber(1);
             }
-          }, 4000);
+          }, 3000);
+        currentImage.classList.toggle("hover");
     }
 
     useEffect(() => {
@@ -29,24 +29,24 @@ const ProjectSection = () => {
     })
 
     return (
-        <div id="project-section-container">
+        <section id="project-section-container" className="section-container">
             <div className="project-image-grid">
                 <div className="project-image-container">
                     <img src={projectPhoto1} alt="Timber fencing stained reddish-brown beside tiled pool area." />
                     <p className="project-image-text" id="image-1">
-                        <span>Timber Screening</span>
+                        Timber Screening
                     </p>
                 </div>
                 <div className="project-image-container">
                     <img src={projectPhoto2} alt="Rough sandstone blocks used for creating a tiered garden bed." />
                     <p className="project-image-text" id="image-2">
-                        <span>Sandstone Work</span>
+                        Sandstone Work
                     </p>
                 </div>
                 <div className="project-image-container">
                     <img src={projectPhoto3} alt="Shaped hedgeline curling past a pool fence." />
                     <p className="project-image-text" id="image-3">
-                        <span>Garden Design</span>
+                        Garden Design
                     </p>
                 </div>
             </div>
@@ -54,23 +54,23 @@ const ProjectSection = () => {
             <div className="project-image-container">
                     <img src={projectPhoto4} alt="Newly made decking and timber stairs stained tan brown" />
                     <p className="project-image-text" id="image-4">
-                        <span>Decking</span>
+                        Decking
                     </p>
                 </div>
                 <div className="project-image-container">
                     <img src={projectPhoto5} alt="New lawn, freshly cut with paver stepping stone path alongside." />
                     <p className="project-image-text" id="image-5">
-                        <span>Lawns & Paving</span>
+                        Lawns & Paving
                     </p>
                 </div>
                 <div className="project-image-container">
                     <img src={projectPhoto6} alt="New garden bed built beside driveway using wooden retaining walls." />
                     <p className="project-image-text" id="image-6">
-                        <span>Retaining Walls</span>
+                        Retaining Walls
                     </p>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 

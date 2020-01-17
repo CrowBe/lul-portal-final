@@ -5,16 +5,113 @@ body {
 
 #main-nav-bar {
   display: flex;
+  justify-content: space-around;
   background-color: #021342;
   height: 15vh;
+  text-decoration: none;
 }
-#main-nav-bar img {
-  display: inline-block;
-  height: 100%;
+#main-nav-bar div {
+  width: 40vw;
+}
+#main-nav-bar div img {
+  align-self: center;
+  display: block;
+  margin: auto;
+  max-height: 100%;
+  max-width: 55vw;
 }
 
-#home-page-wrapper {
-  transition: body 2s;
+#contact-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+#contact-button button {
+  padding: 10px;
+  margin-right: 3vw;
+  background-color: #94d60a;
+  color: whitesmoke;
+  font-size: 2vh;
+  font-weight: bolder;
+  border-radius: 4px;
+}
+#contact-button button:hover {
+  cursor: pointer;
+  background-color: whitesmoke;
+  color: #021342;
+}
+
+#sitewide-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 10vh;
+  background-color: #021342;
+  color: whitesmoke;
+  text-align: center;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes arrow-move {
+  from {
+    padding: 6px 10px 14px 10px;
+  }
+  to {
+    padding: 14px 10px 6px 10px;
+  }
+}
+/* Standard syntax */
+@keyframes arrow-move {
+  from {
+    padding: 6px 10px 14px 10px;
+  }
+  to {
+    padding: 14px 10px 6px 10px;
+  }
+}
+#footer-arrow-container {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  bottom: 0;
+  left: 50vw;
+  margin: 2vh -2vw 2vh 0;
+  z-index: 1;
+  border-radius: 15px;
+}
+#footer-arrow-container img {
+  display: block;
+  width: 4vh;
+}
+#footer-arrow-container :first-child {
+  -webkit-animation-name: arrow-move;
+  /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 1s;
+  /* Safari 4.0 - 8.0 */
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-iteration-count: infinite;
+  animation-name: arrow-move;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+#footer-arrow-container :last-child {
+  padding: 0 10px;
+}
+
+.section-container {
+  display: none;
+  height: 75vh;
+  width: 100vw;
+  opacity: 0;
+}
+
+.section-enter {
+  display: flex;
+  opacity: 1;
 }
 
 #home-sidebar {
@@ -29,44 +126,22 @@ body {
   overflow: hidden;
   text-align: center;
   text-decoration: none;
-  color: #021342;
 }
-#home-sidebar span {
-  margin: auto;
-  display: none;
-}
-#home-sidebar div {
+#home-sidebar button {
   height: 7vh;
   width: 7vw;
   background-color: #94d60a;
-  transition: box-shadow 2s, background-color 2s;
+  transition: color 2s, box-shadow 2s, background-color 2s;
+  border: none;
   display: flex;
   justify-content: center;
+  cursor: pointer;
+  font-size: 0;
 }
 #home-sidebar .current-link {
   box-shadow: inset 0 0 5px 10px #94d60a;
   background-color: white;
-}
-
-.section-enter {
-  opacity: 0;
-  transform: scale(0.9);
-}
-
-.section-enter-active {
-  opacity: 1;
-  transform: translateX(0);
-  transition: opacity 300ms, transform 300ms;
-}
-
-.section-exit {
-  opacity: 1;
-}
-
-.section-exit-active {
-  opacity: 0;
-  transform: scale(0.9);
-  transition: opacity 300ms, transform 300ms;
+  color: #021342;
 }
 
 .VideoBg-module_video__2IPmN {
@@ -74,9 +149,6 @@ body {
 }
 
 #main-section-container {
-  height: 75vh;
-  width: 100vw;
-  display: flex;
   justify-content: center;
   align-items: center;
   font-family: "Raleway", sans-serif;
@@ -84,75 +156,12 @@ body {
 }
 #main-section-container h1 {
   text-align: center;
-}
-
-#about-section-container {
-  display: flex;
-  height: 75vh;
-  width: 100vw;
-  background-image: url("about-backdrop.jpg");
-  background-size: 75vh auto;
-  background-position: center;
-  text-align: center;
-  color: whitesmoke;
-}
-
-#about-text-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-#about-text-container h1 {
-  font-family: "Ibarra Real Nova", serif;
-}
-#about-text-container div {
-  width: 60vw;
-  padding: 0 4vw;
-  font-family: "Raleway", sans-serif;
-}
-#about-text-container p {
-  font-size: 2.5vh;
-}
-#about-text-container span {
-  font-style: italic;
-  color: #94d60a;
-}
-#about-text-container #about-page-link {
-  position: fixed;
-  bottom: 12vh;
-  left: 0;
-  width: 60vw;
-  text-align: center;
-}
-#about-text-container #about-page-link a {
-  color: #94d60a;
-  background-color: rgba(0, 0, 0, 0.253);
-  padding: 3px;
-  border-radius: 10%;
-  text-decoration: unset;
-}
-
-#about-icons-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding-top: 2vh;
-}
-#about-icons-container div img {
-  display: block;
-  height: 9vh;
-  padding: 1vh;
-  border: 1px solid #94d60a;
-  background-color: rgba(0, 0, 0, 0.527);
-  border-radius: 50%;
-}
-#about-icons-container div h3 {
-  margin-top: 2px;
+  font-size: 6vh;
+  margin: 0 10vw;
+  opacity: 0.8;
 }
 
 #project-section-container {
-  display: flex;
-  height: 75vh;
   justify-content: space-evenly;
 }
 #project-section-container .project-image-grid {
@@ -172,6 +181,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   opacity: 0.05;
   top: 0;
   left: 0;
@@ -181,15 +191,145 @@ body {
   background-color: whitesmoke;
   color: #021342;
   font-family: "Raleway", sans-serif;
-  transition: opacity 2.5s;
+  transition: opacity 3s;
+}
+#project-section-container .project-image-text:hover {
+  opacity: 1;
 }
 #project-section-container .hover {
-  opacity: 0.95;
+  opacity: 1;
+}
+
+#about-section-container {
+  background-image: url("about-backdrop.jpg");
+  background-size: 75vh auto;
+  background-position: left;
+  color: whitesmoke;
+}
+
+#about-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: justify;
+  font-size: 2vh;
+  padding: 0 8vw;
+  width: 50vw;
+  font-family: "Raleway", sans-serif;
+}
+#about-text-container span {
+  font-style: italic;
+  color: #94d60a;
+}
+
+#about-page-link {
+  position: fixed;
+  bottom: 12vh;
+  left: 0;
+  width: 60vw;
+  text-align: center;
+}
+#about-page-link a {
+  color: #94d60a;
+  background-color: rgba(0, 0, 0, 0.253);
+  padding: 3px;
+  border-radius: 10%;
+  text-decoration: unset;
+}
+
+#about-icons-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-top: 2vh;
+}
+#about-icons-container div img {
+  display: block;
+  height: 9vh;
+  padding: 1vh;
+  margin: auto;
+  border: 1px solid #94d60a;
+  background-color: rgba(0, 0, 0, 0.527);
+  border-radius: 50%;
+}
+#about-icons-container div h3 {
+  margin-top: 1vh;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+}
+
+#staff-section-container {
+  flex-direction: column;
+  height: 85vh;
+}
+
+#staff-card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 50vh;
+}
+
+.staff-card {
+  display: flex;
+  border: solid 2px #021342;
+  border-radius: 5px;
+  background-color: whitesmoke;
+}
+
+.staff-card-image {
+  height: 18vh;
+  width: auto;
+  padding: 1vh;
+}
+.staff-card-image img {
+  height: 100%;
+  border-radius: 5px;
+}
+
+.staff-card-details {
+  border: solid 1px #94d60a;
+  width: 180px;
+  margin: 5px;
+  padding: 5px;
+  font-family: "Raleway", sans-serif;
+}
+.staff-card-details h4 {
+  margin: 0;
+}
+.staff-card-details span {
+  margin-top: 1vh;
+  font-size: 2vh;
+  font-style: italic;
+}
+
+.staff-section-footer {
+  height: 35vh;
+  background-color: #021342;
+  color: whitesmoke;
+  font-family: "Ibarra Real Nova", serif;
+  z-index: 2;
+  text-align: justify;
+}
+.staff-section-footer .contact-details-container h4 {
+  display: block;
+}
+
+.legal-information-container {
+  width: 95vw;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 2vw;
+  bottom: 1vh;
+  font-size: 1.5vh;
 }
 
 #about-page {
   height: 75vh;
   overflow: scroll;
+  padding: 2vh 5vw 10vh;
 }
 #about-page h2 {
   font-family: "Raleway", sans-serif;
@@ -201,19 +341,166 @@ body {
   font-weight: bolder;
 }
 
-#sitewide-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100vw;
-  height: 10vh;
-  background-color: #021342;
-  color: whitesmoke;
-  text-align: center;
+.contact-page-container {
+  display: flex;
+  flex-direction: column;
+  color: #021342;
+  font-family: "Ibarra Real Nova", serif;
 }
 
-@media only screen and (min-width: 768px) {
-  #home-sidebar span {
-    display: unset;
+.contact-section-one {
+  width: 80vw;
+  margin: 2vh auto 0;
+}
+.contact-section-one p {
+  margin: 1vh auto;
+  width: 70vw;
+  text-align: center;
+  font-size: 1.5vh;
+  font-family: "Raleway", sans-serif;
+}
+
+.contact-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px #021342;
+  border-radius: 30%;
+  padding: 0 1vw 3vh;
+}
+.contact-form-container h2 {
+  margin-bottom: 0;
+}
+
+#contact-name {
+  grid-area: name;
+}
+
+#contact-number {
+  grid-area: number;
+}
+
+#contact-time {
+  grid-area: time;
+}
+
+#contact-message {
+  grid-area: message;
+}
+
+#contact-submit {
+  grid-area: submit;
+  background-color: #94d60a;
+  color: whitesmoke;
+  border-radius: 4px;
+}
+#contact-submit:hover {
+  cursor: pointer;
+  background-color: whitesmoke;
+  color: #021342;
+}
+
+.contact-form {
+  display: grid;
+  grid-template-columns: 15vw 15vw 2vw 15vw 20vw;
+  grid-template-rows: auto;
+  grid-template-areas: "name name . message message" "number number . message message" "time time . message message" ". submit submit submit .";
+  grid-row-gap: 2vh;
+}
+
+.contact-info-container {
+  display: flex;
+  justify-content: space-evenly;
+  height: 25vh;
+}
+
+.contact-details-container {
+  border: solid 0.5px #021342;
+  width: 42vw;
+  border-radius: 10px;
+  padding-left: 2vw;
+}
+.contact-details-container h4 {
+  display: none;
+}
+
+.contact-info-card {
+  height: 4vh;
+  display: flex;
+  align-items: center;
+  margin-top: 2vh;
+}
+.contact-info-card img {
+  display: inline-block;
+  height: 100%;
+  width: auto;
+}
+.contact-info-card p {
+  padding-left: 2vw;
+  width: 30vw;
+  font-size: 2vh;
+}
+
+#weekdays {
+  grid-area: weekdays;
+}
+
+#saturday {
+  grid-area: saturday;
+}
+
+#sunday {
+  grid-area: sunday;
+}
+
+#week-hours {
+  grid-area: week-hours;
+}
+
+#sat-hours {
+  grid-area: sat-hours;
+}
+
+#sun-hours {
+  grid-area: sun-hours;
+}
+
+.contact-hours-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid 0.5px #021342;
+  width: 42vw;
+  border-radius: 10px;
+}
+
+.contact-hours-grid {
+  font-size: 2vh;
+  display: grid;
+  grid-template-columns: 18vw 1vw 18vw;
+  grid-template-rows: 5vh 5vh 5vh;
+  grid-template-areas: "weekdays . week-hours" "saturday . sat-hours" "sunday . sun-hours";
+}
+
+#staff-footer-logo {
+  height: 10vh;
+  width: auto;
+  position: fixed;
+  bottom: 2vh;
+  right: 2vh;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1025px) {
+  body {
+    font-size: larger;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  #home-sidebar button {
+    color: whitesmoke;
+    font-size: 2.5vh;
     font-family: "Raleway", sans-serif;
   }
 
@@ -223,15 +510,43 @@ body {
   #project-section-container .project-image-grid {
     flex-direction: row;
   }
-  #project-section-container img {
+  #project-section-container .project-image-grid img {
     height: 30vh;
-    width: auto;
   }
 
   #about-section-container {
     background-image: url(widescreen-about-backdrop.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #about-section-container #about-text-container {
+    flex-direction: row;
+    font-size: larger;
+    width: 100vw;
+    padding: 0;
+  }
+  #about-section-container #about-text-container p {
+    width: 50vw;
+    font-size: 3vh;
+    background-color: rgba(0, 0, 0, 0.219);
+    padding: 10px;
+  }
+
+  #about-icons-container {
+    flex-direction: row;
+  }
+  #about-icons-container div h3 {
+    font-size: 4vh;
+  }
+
+  #staff-card-container {
+    flex-direction: row;
+  }
+
+  .staff-card-image {
+    height: 25vh;
   }
 }
 

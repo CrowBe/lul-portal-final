@@ -1,75 +1,68 @@
 import React, { useState, useEffect } from 'react';
-import { CSSTransition } from 'react-transition-group';
-import HomeNavbar from '../common/HomeNavbar';
-import MainSection from '../layout/MainSection';
-import ProjectSection from '../layout/ProjectSection';
-import AboutSection from '../layout/AboutSection';
-import StaffSection from '../layout/StaffSection';
-import { debounce } from 'throttle-debounce';
+import { throttle, debounce } from 'throttle-debounce';
+import HomeSidebar from '../common/HomeSidebar';
+import SectionHandler from '../layout/SectionHandler';
+import FooterArrow from '../common/FooterArrow';
+
 
 const HomePage = () => {
     const [position, setPosition] = useState(0);
-    const [inProp, setInProp] = useState(false);
-    // These variables are used in combination with the scroll handler
-    // to simulate route changing on scroll.
-    const componentOptions = [
-        MainSection, ProjectSection, 
-        AboutSection, StaffSection
-    ];
-    const CurrentComponent = componentOptions[position];
+    const [previousPosition, setPreviousPosition] = useState(null);
 
-    // The scroll handler recursively removes itself to ensure it is not
-    // called multiple times on wheel or swipe
-
-    const scrollHandler = debounce(300, ((e) => {
-        
-        console.log("1")
+    // Lodash debounce function is used to ensure the function is not called multiple times
+    // This would rapidly move through components and lag the client.
+    const scrollHandler = debounce(200, ((e) => {
+        setPreviousPosition(position);
         if (e.deltaY > 0) {
             if (position < 3) {
                 setPosition(position + 1);
-                setInProp(true)
             }
         } else if (position > 0) {
             setPosition(position - 1);
-            setInProp(true)
         }
-        e.target.removeEventListener(e.type, scrollHandler)
     }));
 
-    const linkIndicator = async () => {
-        let links = await document.getElementsByClassName("home-sidebar-button")
-        for (let link of links) {
-            if (link.id !== `link-${position}`) {
-                link.classList.remove("current-link")
-            } else if (link.id === `link-${position}`) {
-                link.classList.add("current-link")
-            }
-        } 
-    }
-    
-    // The use effect hook is given a set timout before adding the handler so that the scroll handler
-    // isn't immediately added on load. This avoids skipping pages on a fast load.
-    useEffect(() => {
-        const addScrollListener = async () => {
-            let wrapper = await document.getElementById("home-page-wrapper");
-            wrapper.addEventListener('wheel', scrollHandler)
-            wrapper.addEventListener('touchmove', scrollHandler)
+    const linkHandler = throttle(200, (event) => {
+        setPreviousPosition(position);
+        setPosition(Number(event.target.id[5]));
+    });
+
+    const addListeners = () => {
+        let container = document.getElementsByClassName("section-container")[0];
+        container.addEventListener('wheel', scrollHandler);
+
+        let buttons = document.getElementsByClassName("home-sidebar-button");
+        for (let button of buttons) {
+            button.addEventListener('click', linkHandler)
         }
-        linkIndicator();
-        addScrollListener()
+
+        let homeButton = document.getElementById("main-nav-home");
+        homeButton.addEventListener('click', (event) => {
+            setPosition(0);
+        });
+    };
+
+    const sectionTransitionHandler = () => {
+        let containers = document.getElementsByClassName("section-container");
+        containers[0].classList.add("section-enter")
+        if (containers.length > 1) {
+            containers[1].classList.add("section-exit")
+        }
+    }
+
+    
+    // the useEffect hook adds the event listeners once the page has rendered
+    useEffect(() => {
+        addListeners();
+        sectionTransitionHandler();
     })
     
     return (
-        <CSSTransition
-        in={inProp}
-        timeout={200}
-        classNames="section"
-    >
-        <div id="home-page-wrapper">
-            <HomeNavbar setter={setPosition}/>
-            <CurrentComponent />
+        <div id="home-page-wrapper" >
+            <SectionHandler position={position}  previousPosition={previousPosition}/>
+            <HomeSidebar position={position} />
+            <FooterArrow />
         </div>
-    </CSSTransition>
     )
 };
 

@@ -8,18 +8,15 @@ const maintainLogo = process.env.PUBLIC_URL + './assets/maintain-logo.png';
 
 const AboutSection = () => {
     return (
-        <section id='about-section-container'>
+        <section id='about-section-container' className="section-container">
             <div id="about-text-container">
-                
-                <div id="about-section-summary">
-                    <p>
+                <p>
                         A family owned business with a history of <span>Integrity</span>,
                         the experience to upgrade your outdoor space with <span>Excellence</span>,
                         and an attitude of <span>Genuine Care</span> for every customer.
-                    </p>
-                </div>
-                <div id="about-page-link"><Link to="/about-page">Learn more about us...</Link></div>
-                
+                </p>
+                <div id="about-page-link"><Link to="/about-page">Learn more about our company...</Link></div>
+
             </div>
             <div id="about-icons-container">
                 <div>
