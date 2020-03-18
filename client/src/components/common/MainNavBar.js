@@ -6,7 +6,7 @@ const logo = process.env.PUBLIC_URL + './assets/colour-logo.png';
 const MainNavBar = () => {
     return (
         <nav id='main-nav-bar'>
-            <div>
+            <div id="nav-logo">
                 <Link to="/"><img src={logo} alt="Logo, outline of a house with a leaf integrated into it." id="main-nav-home" /></Link>
             </div>
             <div id="contact-button">

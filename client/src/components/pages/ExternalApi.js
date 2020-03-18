@@ -8,18 +8,15 @@ const ExternalApi = () => {
 
   const callApi = async () => {
     try {
-      const token = await getTokenSilently({
-          audience: process.env.REACT_APP_AUTH_AUDIENCE,
-          scope: process.env.REACT_APP_AUTH_ADMIN,
-          redirect_uri: 'http://localhost:3000/portal'
-        });
+      const token = await getTokenSilently();
 
       const response = await fetch("http://localhost:3001/api/external", {
         headers: {
-          Authorization: `Bearer ${token}`
+          Authorization: `Bearer ${token}`,
+          Audience: `${process.env.REACT_APP_AUTH_AUDIENCE}`
         }
       });
-      console.log(response);
+
       const responseData = await response.json();
 
       setShowResult(true);

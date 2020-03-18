@@ -8,7 +8,7 @@ const whiteLogoNavy = process.env.PUBLIC_URL + './assets/white-logo-navy.png';
 
 const StaffSection = () => {
     return (
-        <section id="staff-section-container" className="section-container">
+        <section name="staff" id="staff-section-container" className="section-container">
             <div id="staff-card-container" >
                 <div className="staff-card">
                     <div className="staff-card-image">

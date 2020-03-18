@@ -1,45 +1,61 @@
 @import url("https://fonts.googleapis.com/css?family=Ibarra+Real+Nova|Raleway&display=swap");
 body {
   margin: 0;
+  max-width: 100%;
+  font-family: "Raleway", sans-serif;
 }
-
-#main-nav-bar {
-  display: flex;
-  justify-content: space-around;
-  background-color: #021342;
-  height: 15vh;
-  text-decoration: none;
+body h1 {
+  font-family: "Ibarra Real Nova", serif;
 }
-#main-nav-bar div {
-  width: 40vw;
+body h2 {
+  font-family: "Ibarra Real Nova", serif;
 }
-#main-nav-bar div img {
-  align-self: center;
-  display: block;
-  margin: auto;
-  max-height: 100%;
-  max-width: 55vw;
+body h3 {
+  font-family: "Ibarra Real Nova", serif;
 }
-
-#contact-button {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
+body h4 {
+  font-family: "Ibarra Real Nova", serif;
 }
-#contact-button button {
-  padding: 10px;
-  margin-right: 3vw;
+body button {
   background-color: #94d60a;
   color: whitesmoke;
-  font-size: 2vh;
-  font-weight: bolder;
   border-radius: 4px;
+  padding: 10px;
 }
-#contact-button button:hover {
+body button:hover {
   cursor: pointer;
   background-color: whitesmoke;
   color: #021342;
+}
+
+#main-nav-bar {
+  position: fixed;
+  top: 0;
+  height: 15vh;
+  width: 100%;
+  background-color: #021342;
+  z-index: 1;
+}
+#main-nav-bar #nav-logo {
+  position: fixed;
+  left: 0;
+  height: 15vh;
+}
+#main-nav-bar #nav-logo img {
+  height: 100%;
+  width: auto;
+}
+#main-nav-bar #contact-button {
+  position: fixed;
+  right: 5vw;
+  height: 15vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#main-nav-bar #contact-button button {
+  padding: 10px;
+  font-size: 2vh;
 }
 
 #sitewide-footer {
@@ -71,14 +87,13 @@ body {
   }
 }
 #footer-arrow-container {
-  display: flex;
-  flex-direction: column;
   position: fixed;
   bottom: 0;
   left: 50vw;
-  margin: 2vh -2vw 2vh 0;
+  margin-left: -2vh;
+  display: flex;
+  flex-direction: column;
   z-index: 1;
-  border-radius: 15px;
 }
 #footer-arrow-container img {
   display: block;
@@ -99,42 +114,75 @@ body {
   animation-iteration-count: infinite;
 }
 #footer-arrow-container :last-child {
-  padding: 0 10px;
+  padding: 0 10px 2.5vh;
+}
+#footer-arrow-container:hover {
+  cursor: pointer;
+}
+
+.page {
+  position: absolute;
+  width: 100vw;
+}
+
+.page-enter {
+  margin-top: -75vh;
+  transform: scale(0.8);
+}
+
+.page-enter-active {
+  transform: scale(1);
+  margin-top: 0;
+  transition: margin-top 500ms linear, transform 500ms linear;
+}
+
+.page-exit {
+  opacity: 1;
+}
+
+.page-exit-active {
+  opacity: 0;
+  transition: opacity 500ms;
+}
+
+.website {
+  overflow-x: hidden;
 }
 
 .section-container {
-  display: none;
+  display: flex;
   height: 75vh;
   width: 100vw;
-  opacity: 0;
+  padding-top: 15vh;
 }
 
-.section-enter {
-  display: flex;
-  opacity: 1;
+.sentinel {
+  height: 15vh;
+  margin-bottom: -15vh;
+  width: 100vw;
+  background-color: rgba(255, 255, 255, 0);
 }
 
 #home-sidebar {
   display: flex;
+  z-index: 2;
+  position: fixed;
+  right: 0vw;
+  bottom: 50%;
+  transform: translateY(50%);
   flex-direction: column;
   justify-content: space-evenly;
-  position: fixed;
-  right: 0;
-  bottom: 50%;
-  margin-bottom: -14vh;
+  align-items: center;
   border-radius: 15px 0 0 15px;
-  overflow: hidden;
-  text-align: center;
+  background-color: #94d60a;
+}
+#home-sidebar a {
   text-decoration: none;
 }
 #home-sidebar button {
-  height: 7vh;
-  width: 7vw;
-  background-color: #94d60a;
   transition: color 2s, box-shadow 2s, background-color 2s;
   border: none;
   display: flex;
-  justify-content: center;
   cursor: pointer;
   font-size: 0;
 }
@@ -144,17 +192,23 @@ body {
   color: #021342;
 }
 
-.VideoBg-module_video__2IPmN {
-  display: unset;
-}
-
 #main-section-container {
   justify-content: center;
   align-items: center;
-  font-family: "Raleway", sans-serif;
   color: whitesmoke;
 }
-#main-section-container h1 {
+
+#main-poster-image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 75vh;
+  width: 100vw;
+  top: 15vh;
+  background-image: url("https://i1.wp.com/lookinguplandscapes.com.au/wp-content/uploads/2018/01/House-slide-1.jpg?fit=1621%2C1080");
+  background-position: center;
+}
+#main-poster-image-container h1 {
   text-align: center;
   font-size: 6vh;
   margin: 0 10vw;
@@ -191,7 +245,6 @@ body {
   width: 100%;
   background-color: whitesmoke;
   color: #021342;
-  font-family: "Raleway", sans-serif;
   transition: opacity 3s;
 }
 #project-section-container .project-image-text:hover {
@@ -206,6 +259,7 @@ body {
   background-size: 75vh auto;
   background-position: left;
   color: whitesmoke;
+  position: relative;
 }
 
 #about-text-container {
@@ -216,16 +270,14 @@ body {
   font-size: 2vh;
   padding: 0 8vw;
   width: 50vw;
-  font-family: "Raleway", sans-serif;
 }
 #about-text-container span {
-  font-style: italic;
   color: #94d60a;
 }
 
 #about-page-link {
-  position: fixed;
-  bottom: 12vh;
+  position: absolute;
+  bottom: 2vh;
   left: 0;
   width: 60vw;
   text-align: center;
@@ -241,7 +293,7 @@ body {
 #about-icons-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   padding-top: 2vh;
 }
 #about-icons-container div img {
@@ -256,7 +308,6 @@ body {
 #about-icons-container div h3 {
   margin-top: 1vh;
   text-align: center;
-  font-family: "Raleway", sans-serif;
 }
 
 #staff-section-container {
@@ -302,10 +353,10 @@ body {
 .staff-card-details span {
   margin-top: 1vh;
   font-size: 2vh;
-  font-style: italic;
 }
 
 .staff-section-footer {
+  position: relative;
   display: flex;
   height: 35vh;
   background-color: #021342;
@@ -324,21 +375,26 @@ body {
 .staff-section-footer .contact-hours-container h4 {
   margin-top: 2vh;
 }
+.staff-section-footer #staff-footer-logo {
+  height: 10vh;
+  width: auto;
+  position: absolute;
+  bottom: 2vh;
+  right: 2vh;
+}
 
 .legal-information-container {
-  width: 95vw;
+  width: 100vw;
   position: fixed;
   display: flex;
-  justify-content: space-between;
-  padding-left: 2vw;
+  justify-content: space-around;
   bottom: 1vh;
   font-size: 1.5vh;
 }
 
 #about-page {
-  height: 75vh;
-  overflow: scroll;
-  padding: 2vh 5vw 10vh;
+  margin-top: 15vh;
+  padding: 1vh 8vw 10vh;
 }
 #about-page h2 {
   font-family: "Raleway", sans-serif;
@@ -351,6 +407,7 @@ body {
 }
 
 .contact-page-container {
+  margin-top: 15vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -360,27 +417,30 @@ body {
 }
 
 .contact-section-one {
-  width: 80vw;
-  margin: 2vh auto 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100vw;
 }
 .contact-section-one p {
-  margin: 1vh auto;
-  width: 70vw;
+  width: 85%;
   text-align: center;
-  font-size: 1.5vh;
+  font-size: 1.2vh;
   font-family: "Raleway", sans-serif;
-  font-style: italic;
+  line-height: normal;
 }
 
 .contact-form-container {
   display: flex;
+  width: 80%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border: solid 1px #021342;
-  border-radius: 30%;
-  padding: 0 1vw 3vh;
+  border-radius: 25px;
   box-shadow: 0 0 6px #021342;
+  padding-bottom: 2vh;
 }
 .contact-form-container h2 {
   margin-bottom: 0;
@@ -420,6 +480,15 @@ body {
   grid-template-rows: auto;
   grid-template-areas: "name name . message message" "number number . message message" "time time . message message" ". submit submit submit .";
   grid-row-gap: 2vh;
+}
+.contact-form input {
+  font-family: "Raleway", sans-serif;
+}
+.contact-form select {
+  font-family: "Raleway", sans-serif;
+}
+.contact-form textarea {
+  font-family: "Raleway", sans-serif;
 }
 
 .contact-info-container {
@@ -506,20 +575,20 @@ body {
   grid-template-areas: "weekdays . week-hours" "saturday . sat-hours" "sunday . sun-hours";
 }
 
-#staff-footer-logo {
-  height: 10vh;
-  width: auto;
-  position: fixed;
-  bottom: 2vh;
-  right: 2vh;
-}
-
-@media only screen and (min-width: 768px) and (max-width: 1025px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   body {
-    font-size: larger;
+    font-size: x-large;
+  }
+
+  #main-nav-bar #contact-button button {
+    font-size: 2.5vh;
   }
 }
 @media only screen and (min-width: 1025px) {
+  #main-nav-bar #contact-button button {
+    font-size: 2.5vh;
+  }
+
   #home-sidebar button {
     color: whitesmoke;
     font-size: 2.5vh;
@@ -575,6 +644,7 @@ body {
     flex-direction: row-reverse;
     height: 75vh;
     font-size: larger;
+    width: 95vw;
   }
 
   .contact-section-one {
@@ -586,7 +656,7 @@ body {
     margin: 2vh 0;
   }
   .contact-section-one p {
-    width: 35vw;
+    width: 90%;
     font-size: 2.5vh;
     padding-bottom: 1vh;
   }
@@ -598,7 +668,7 @@ body {
   }
   .contact-info-container .contact-details-container {
     width: 35vw;
-    padding-left: 0;
+    padding: 0 0 2vh;
   }
   .contact-info-container .contact-details-container .contact-info-card {
     margin: 2vh 0 2vh 6vh;
@@ -613,6 +683,7 @@ body {
   .contact-info-container .contact-hours-container {
     width: 35vw;
     text-align: center;
+    padding: 0 0 2vh;
   }
   .contact-info-container .contact-hours-container span {
     font-size: 3vh;
@@ -620,7 +691,7 @@ body {
 
   .contact-form-container {
     border-radius: 25px;
-    width: 48vw;
+    width: 90%;
     height: 45vh;
   }
 

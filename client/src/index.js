@@ -21,9 +21,9 @@ ReactDOM.render(
   <Auth0Provider
     domain={process.env.REACT_APP_AUTH_DOMAIN}
     client_id={process.env.REACT_APP_AUTH_CLIENT_ID}
-    redirect_uri={`${window.location.origin}/portal`}
-    onRedirectCallback={onRedirectCallback}
+    redirect_uri={`${window.location.origin}/portal/profile`}
     audience={process.env.REACT_APP_AUTH_AUDIENCE}
+    onRedirectCallback={onRedirectCallback}
   >
     <App />
   </Auth0Provider>,

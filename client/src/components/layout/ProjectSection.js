@@ -29,7 +29,7 @@ const ProjectSection = () => {
     })
 
     return (
-        <section id="project-section-container" className="section-container">
+        <section name="projects" id="project-section-container" className="section-container">
             <div className="project-image-grid">
                 <div className="project-image-container">
                     <img src={projectPhoto1} alt="Timber fencing stained reddish-brown beside tiled pool area." />

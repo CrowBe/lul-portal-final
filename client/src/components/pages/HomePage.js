@@ -1,68 +1,70 @@
-import React, { useState, useEffect } from 'react';
-import { throttle, debounce } from 'throttle-debounce';
-import HomeSidebar from '../common/HomeSidebar';
-import SectionHandler from '../layout/SectionHandler';
-import FooterArrow from '../common/FooterArrow';
+import React, { useEffect } from 'react';
+import MainSection from '../layout/MainSection';
+import ProjectSection from '../layout/ProjectSection';
+import AboutSection from '../layout/AboutSection';
+import StaffSection from '../layout/StaffSection';
 
+const downArrow = process.env.PUBLIC_URL + './assets/down-arrow-white.png';
+const baseLine = process.env.PUBLIC_URL + './assets/arrow-base-white.png';
 
-const HomePage = () => {
-    const [position, setPosition] = useState(0);
-    const [previousPosition, setPreviousPosition] = useState(null);
-
-    // Lodash debounce function is used to ensure the function is not called multiple times
-    // This would rapidly move through components and lag the client.
-    const scrollHandler = debounce(200, ((e) => {
-        setPreviousPosition(position);
-        if (e.deltaY > 0) {
-            if (position < 3) {
-                setPosition(position + 1);
-            }
-        } else if (position > 0) {
-            setPosition(position - 1);
-        }
-    }));
-
-    const linkHandler = throttle(200, (event) => {
-        setPreviousPosition(position);
-        setPosition(Number(event.target.id[5]));
-    });
-
-    const addListeners = () => {
-        let container = document.getElementsByClassName("section-container")[0];
-        container.addEventListener('wheel', scrollHandler);
-
-        let buttons = document.getElementsByClassName("home-sidebar-button");
-        for (let button of buttons) {
-            button.addEventListener('click', linkHandler)
-        }
-
-        let homeButton = document.getElementById("main-nav-home");
-        homeButton.addEventListener('click', (event) => {
-            setPosition(0);
-        });
+const HomePage = (props) => {
+    const { history } = props;
+    const config = {
+      root: null, // avoiding 'root' or setting it to 'null' sets it to default value: viewport
+      rootMargin: '0px',
+      threshold: [0.7, 0.95]
     };
-
-    const sectionTransitionHandler = () => {
-        let containers = document.getElementsByClassName("section-container");
-        containers[0].classList.add("section-enter")
-        if (containers.length > 1) {
-            containers[1].classList.add("section-exit")
+    
+    const handleIntersect = (entries, observer) => {
+      entries.forEach((entry) => {
+        let targetId = `${entry.target.id}-container`;
+        if (entry.intersectionRatio > 0.8) {
+          let targetElement = document.getElementById(targetId)
+          console.log(targetElement);
+        } else if (entry.intersectionRatio > 0.1) {
+          console.log(`${targetId} is partially on screen`)
+        } else {
+          console.log(entry.intersectionRatio)
         }
+      });
     }
 
-    
-    // the useEffect hook adds the event listeners once the page has rendered
     useEffect(() => {
-        addListeners();
-        sectionTransitionHandler();
+      let observer = new IntersectionObserver(handleIntersect, config);
+      const containers = document.getElementsByClassName('sentinel');
+      for (let container of containers) {
+        observer.observe(container);
+      }
+
+      const { hash } = history.location;
+      if (hash) {
+        let node = document.getElementsByName(hash.replace('#', ''));
+        if (node.length > 0) {
+            node[0].scrollIntoView({
+              block: "start",
+              behavior: "smooth"
+            });
+        }
+      }
     })
-    
+
     return (
-        <div id="home-page-wrapper" >
-            <SectionHandler position={position}  previousPosition={previousPosition}/>
-            <HomeSidebar position={position} />
-            <FooterArrow />
-        </div>
+      <div className='home-page-wrapper'>
+        <div id="main-section" className="sentinel"></div>
+        <MainSection />
+        <div id="project-section" className="sentinel"></div>
+        <ProjectSection />
+        <div id="about-section" className="sentinel"></div>
+        <AboutSection />
+        <div id="staff-section" className="sentinel"></div>
+        <StaffSection />
+        <footer>
+          <div id="footer-arrow-container">
+              <img src={downArrow} alt="white arrow pointing down" />
+              <img src={baseLine} alt="white line with down arrow moving towards it" />
+          </div>
+        </footer>
+      </div>
     )
 };
 
