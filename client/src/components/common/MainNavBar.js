@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
-const logo = process.env.PUBLIC_URL + './assets/colour-logo.png';
+import logo from '../../images/colour-logo.png';
 
 const MainNavBar = () => {
     return (

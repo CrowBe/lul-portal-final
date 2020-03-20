@@ -3,10 +3,9 @@ import { Router, Route, Switch } from 'react-router-dom';
 import MainNavBar from './components/common/MainNavBar';
 import Website from './Website';
 import Portal from './Portal';
-import history from './utils/history';
 
-
-const App = () => {
+const App = (props) => {
+  const { history } = props;
   return (
     <Router history={history}>
       <header>

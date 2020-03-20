@@ -9,13 +9,9 @@ const SiteFooter = () => {
                     <p>Looking Up Landscapes</p>
                 </div>
                 <div>
-
-                </div>
-                <div>
                     <p>License No: 34279C </p>
                     <p>Abn: 63622774672</p>
                 </div>
-                
             </div>
         </footer>
     )

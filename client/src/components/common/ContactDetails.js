@@ -1,10 +1,8 @@
 import React from 'react';
 import ContactInfoCard from '../common/ContactInfoCard';
-
-const emailIcon = process.env.PUBLIC_URL + './assets/email-icon.png';
-const phoneIcon = process.env.PUBLIC_URL + './assets/phone-icon.png';
-const mobileIcon = process.env.PUBLIC_URL + './assets/mobile-icon.png';
-// const globeIcon = process.env.PUBLIC_URL + './assets/globe-icon.png';
+import mobileIcon from '../../images/mobile-icon.png';
+import emailIcon from '../../images/email-icon.png';
+import phoneIcon from '../../images/phone-icon.png';
 
 const ContactDetails = () => {
     return (

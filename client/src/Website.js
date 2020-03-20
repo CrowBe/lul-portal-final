@@ -8,21 +8,21 @@ import AboutPage from './components/pages/AboutPage';
 
 const Website = (props) => {
     const { history } = props;
-  return (
-    <div className="website">
-        <header>
-            <SideNavbar />
-        </header>
-        <Switch>
-            <Route path="/contact-form" component={ContactPage}/>
-            <Route path="/about-page" component={AboutPage} />
-            <HomePage history={history} />
-        </Switch>
-        <footer>
-            <SiteFooter />
-        </footer>
-    </div>
-  );
+    return (
+        <div className="website">
+            <header>
+                <SideNavbar />
+            </header>
+            <Switch>
+                <Route path="/contact-form" component={ContactPage}/>
+                <Route path="/about-page" component={AboutPage} />
+                <HomePage history={history} />
+            </Switch>
+            <footer>
+                <SiteFooter />
+            </footer>
+        </div>
+    );
 };
 
 export default Website;

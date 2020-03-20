@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-
-const projectPhoto1 = process.env.PUBLIC_URL + './assets/project-photo-1.jpg';
-const projectPhoto2 = process.env.PUBLIC_URL + './assets/project-photo-2.jpg';
-const projectPhoto3 = process.env.PUBLIC_URL + './assets/project-photo-3.jpg';
-const projectPhoto4 = process.env.PUBLIC_URL + './assets/project-photo-4.jpg';
-const projectPhoto5 = process.env.PUBLIC_URL + './assets/project-photo-5.jpg';
-const projectPhoto6 = process.env.PUBLIC_URL + './assets/project-photo-6.jpg';
+import projectPhoto1 from '../../images/project-photo-1.jpg';
+import projectPhoto2 from '../../images/project-photo-2.jpg';
+import projectPhoto3 from '../../images/project-photo-3.jpg';
+import projectPhoto4 from '../../images/project-photo-4.jpg';
+import projectPhoto5 from '../../images/project-photo-5.jpg';
+import projectPhoto6 from '../../images/project-photo-6.jpg';
 
 
 const ProjectSection = () => {

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useAuth0 } from "../../react-auth0-spa";
+import { useAuth0 } from "../../config/react-auth0-spa";
 
 const PortalNavBar = () => {
   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();

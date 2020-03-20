@@ -1,10 +1,9 @@
 import React from 'react';
 import ContactHours from '../common/ContactHours';
 import ContactDetails from '../common/ContactDetails';
-
-const staffPhotoBel = process.env.PUBLIC_URL + './assets/bel-profile-headshot.jpg';
-const staffPhotoJon = process.env.PUBLIC_URL + './assets/jon-profile-headshot.jpg';
-const whiteLogoNavy = process.env.PUBLIC_URL + './assets/white-logo-navy.png';
+import staffPhotoBel from '../../images/bel-profile-headshot.jpg';
+import staffPhotoJon from '../../images/jon-profile-headshot.jpg';
+import whiteLogoNavy from '../../images/white-logo-navy.png';
 
 const StaffSection = () => {
     return (

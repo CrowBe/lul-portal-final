@@ -1,10 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-
-const designLogo = process.env.PUBLIC_URL + './assets/design-logo.png';
-const constructLogo = process.env.PUBLIC_URL + './assets/construct-logo.png';
-const gardenLogo = process.env.PUBLIC_URL + './assets/garden-logo.png';
-const maintainLogo = process.env.PUBLIC_URL + './assets/maintain-logo.png';
+import { FaDraftingCompass, FaHammer, FaSeedling, FaTint } from "react-icons/fa";
 
 const AboutSection = () => {
     return (
@@ -18,19 +14,27 @@ const AboutSection = () => {
             </div>
             <div id="about-icons-container">
                 <div>
-                    <img src={designLogo} alt="A set of three different types of rulers used for paper design drawings" />
+                    <div className="about-icon" >
+                        <FaDraftingCompass/>
+                    </div>
                     <h3>Design</h3>
                 </div>
                 <div >
-                    <img src={constructLogo} alt="A construction hammer" />
+                    <div className="about-icon" >
+                        <FaHammer />
+                    </div>
                     <h3>Construct</h3>
                 </div>
                 <div >
-                    <img src={gardenLogo} alt="A set of three different gardening shovels and spades" />
+                    <div className="about-icon" >
+                        <FaSeedling/>
+                    </div>
                     <h3>Garden</h3>
                 </div>
                 <div >
-                    <img src={maintainLogo} alt="Two shifter wrenches" />
+                    <div className="about-icon" >
+                        <FaTint/>
+                    </div>
                     <h3>Maintain</h3>
                 </div>
             </div>
