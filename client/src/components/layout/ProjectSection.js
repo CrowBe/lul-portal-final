@@ -39,13 +39,14 @@ const ProjectSection = () => {
                 <div className="project-image-container">
                     <img src={projectPhoto2} alt="Rough sandstone blocks used for creating a tiered garden bed." />
                     <p className="project-image-text" id="image-2">
-                        Sandstone Work
+                        Garden Design
+                        
                     </p>
                 </div>
                 <div className="project-image-container">
                     <img src={projectPhoto3} alt="Shaped hedgeline curling past a pool fence." />
                     <p className="project-image-text" id="image-3">
-                        Garden Design
+                        Lawns & Paving
                     </p>
                 </div>
             </div>
@@ -53,13 +54,13 @@ const ProjectSection = () => {
             <div className="project-image-container">
                     <img src={projectPhoto4} alt="Newly made decking and timber stairs stained tan brown" />
                     <p className="project-image-text" id="image-4">
-                        Decking
+                        Sandstone Work
                     </p>
                 </div>
                 <div className="project-image-container">
                     <img src={projectPhoto5} alt="New lawn, freshly cut with paver stepping stone path alongside." />
                     <p className="project-image-text" id="image-5">
-                        Lawns & Paving
+                        Decking
                     </p>
                 </div>
                 <div className="project-image-container">

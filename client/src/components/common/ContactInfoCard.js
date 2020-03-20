@@ -1,11 +1,11 @@
 import React from 'react';
 
 const ContactInfoCard = (props) => {
-    const {img, info, name} = props;
+    const {Icon, info, name} = props;
 
     return (
         <div className="contact-info-card" id={`card-${name}`}>
-            <img src={img} alt=""/>
+            <Icon />
             <p>{info}</p>
         </div>
     )

@@ -17,15 +17,15 @@ body h4 {
   font-family: "Ibarra Real Nova", serif;
 }
 body button {
-  background-color: #94d60a;
   color: whitesmoke;
-  border-radius: 4px;
   padding: 10px;
+  border-radius: 2px;
+  border: none;
 }
 body button:hover {
   cursor: pointer;
-  background-color: whitesmoke;
   color: #021342;
+  transform: scale(1.1, 1.1);
 }
 
 #main-nav-bar {
@@ -51,8 +51,12 @@ body button:hover {
   align-items: center;
 }
 #main-nav-bar #contact-button button {
+  background-color: #94d60a;
   font-size: 2vh;
   margin-right: 5vw;
+}
+#main-nav-bar #contact-button button:hover {
+  background-color: whitesmoke;
 }
 
 #sitewide-footer {
@@ -118,7 +122,7 @@ body button:hover {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  border-radius: 15px 0 0 15px;
+  border-radius: 5px 0 0 5px;
   background-color: #94d60a;
   padding: 0 5px;
 }
@@ -213,7 +217,7 @@ body button:hover {
   flex-direction: column;
   justify-content: center;
   text-align: justify;
-  font-size: 2vh;
+  font-size: 2.5vh;
   padding: 0 8vw;
   width: 50vw;
 }
@@ -228,12 +232,16 @@ body button:hover {
   width: 60vw;
   text-align: center;
 }
-#about-page-link a {
-  color: #94d60a;
-  background-color: rgba(0, 0, 0, 0.253);
-  padding: 3px;
-  border-radius: 10%;
+#about-page-link button {
+  color: whitesmoke;
+  border: 1px solid whitesmoke;
+  background-color: rgba(0, 0, 0, 0);
   text-decoration: unset;
+}
+#about-page-link button:hover {
+  background-color: #94d60a;
+  color: whitesmoke;
+  border: none;
 }
 
 #about-icons-container {
@@ -244,8 +252,8 @@ body button:hover {
 }
 #about-icons-container div .about-icon {
   display: block;
-  height: 8vh;
-  width: 8vh;
+  height: 6vh;
+  width: 6vh;
   padding: 2vh;
   border: 1px solid #94d60a;
   background-color: rgba(0, 0, 0, 0.527);
@@ -311,6 +319,7 @@ body button:hover {
 .staff-section-footer {
   position: relative;
   display: flex;
+  justify-content: space-evenly;
   height: 35vh;
   background-color: #021342;
   color: whitesmoke;
@@ -324,6 +333,9 @@ body button:hover {
 }
 .staff-section-footer .contact-hours-container {
   justify-content: flex-start;
+  z-index: 3;
+  border: none;
+  box-shadow: none;
 }
 .staff-section-footer .contact-hours-container h4 {
   margin-top: 2vh;
@@ -379,9 +391,9 @@ body button:hover {
 .contact-section-one p {
   width: 85%;
   text-align: center;
-  font-size: 1.2vh;
+  font-size: 1.9vh;
   font-family: "Raleway", sans-serif;
-  line-height: normal;
+  margin-top: 0;
 }
 
 .contact-form-container {
@@ -454,8 +466,10 @@ body button:hover {
   border: solid 0.5px #021342;
   width: 42vw;
   border-radius: 10px;
-  padding-left: 2vw;
   box-shadow: 0 0 6px #021342;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .contact-details-container h4 {
   text-align: center;
@@ -468,10 +482,8 @@ body button:hover {
   align-items: center;
   margin-top: 2vh;
 }
-.contact-info-card img {
-  display: inline-block;
-  height: 100%;
-  width: auto;
+.contact-info-card svg {
+  color: #94d60a;
 }
 .contact-info-card p {
   padding-left: 2vw;
@@ -663,9 +675,6 @@ body button:hover {
   .staff-section-footer h4 {
     font-size: x-large;
   }
-  .staff-section-footer .contact-details-container {
-    width: 30vw;
-  }
   .staff-section-footer .contact-details-container .contact-info-card {
     font-size: 3vh;
   }
@@ -679,10 +688,9 @@ body button:hover {
     grid-template-columns: 10vw 1vw 10vw;
     font-size: 3vh;
   }
-
-  #staff-footer-logo {
-    height: 15vh;
-    bottom: 5vh;
+  .staff-section-footer #staff-footer-logo {
+    right: 4vh;
+    bottom: 1vh;
   }
 }
 

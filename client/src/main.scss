@@ -32,14 +32,14 @@ body {
         font-family: $serif-font;
     }
     button {
-        background-color: $brand-lime-green;
         color: $brand-white;
-        border-radius: 4px;
         padding: 10px;
+        border-radius: 2px;
+        border: none;
         &:hover {
             cursor: pointer;
-            background-color: $brand-white;
             color: $brand-navy-blue;
+            transform: scale(1.1, 1.1);
         }
     }
 }
@@ -69,8 +69,12 @@ body {
         display: flex;
         align-items: center;
         button {
+            background-color: $brand-lime-green;
             font-size: 2vh;
             margin-right: 5vw;
+            &:hover {
+                background-color: $brand-white;
+            }
         }
     }
 }
@@ -137,7 +141,6 @@ body {
     background-color: rgba(255, 255, 255, 0);
 }
 
-
 #home-sidebar {
     position: fixed;
     display: flex;
@@ -148,7 +151,7 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    border-radius: 15px 0 0 15px;
+    border-radius: 5px 0 0 5px;
     background-color: $brand-lime-green;
     padding: 0 5px;
     a {
@@ -256,7 +259,7 @@ body {
     flex-direction: column;
     justify-content: center;
     text-align: justify;
-    font-size: 2vh;
+    font-size: 2.5vh;
     padding: 0 8vw;
     width: 50vw;
     span {
@@ -270,12 +273,16 @@ body {
     left: 0;
     width: 60vw;
     text-align: center;
-    a {
-        color: $brand-lime-green;
-        background-color: rgba(0, 0, 0, 0.253);
-        padding: 3px;
-        border-radius: 10%;
+    button {
+        color: $brand-white;
+        border: 1px solid $brand-white;
+        background-color: rgba(0, 0, 0, 0);
         text-decoration: unset;
+        &:hover {
+            background-color: $brand-lime-green;
+            color: $brand-white;
+            border: none;
+        }
     }
 }
 
@@ -287,8 +294,8 @@ body {
     div {
         .about-icon {
             display: block;
-            height: 8vh;
-            width: 8vh;
+            height: 6vh;
+            width: 6vh;
             padding: 2vh;
             border: 1px solid $brand-lime-green;
             background-color: rgba(0, 0, 0, 0.527);
@@ -359,6 +366,7 @@ body {
 .staff-section-footer {
     position: relative;
     display: flex;
+    justify-content: space-evenly;
     height: 35vh;
     background-color: $brand-navy-blue;
     color: $brand-white;
@@ -373,6 +381,9 @@ body {
     }
     .contact-hours-container {
         justify-content: flex-start;
+        z-index: 3;
+        border: none;
+        box-shadow: none;
         h4 {
             margin-top: 2vh;
         }
@@ -434,9 +445,9 @@ body {
     p {
         width: 85%;
         text-align: center;
-        font-size: 1.2vh;
+        font-size: 1.9vh;
         font-family: $sans-font;
-        line-height: normal;
+        margin-top: 0;
     }
 }
 
@@ -517,8 +528,10 @@ body {
     border: solid .5px $brand-navy-blue;
     width: 42vw;
     border-radius: 10px;
-    padding-left: 2vw;
     box-shadow: 0 0 6px $brand-navy-blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     h4 {
         text-align: center;
         margin: 2vh 0 0;
@@ -530,10 +543,8 @@ body {
     display: flex;
     align-items: center;
     margin-top: 2vh;
-    img {
-        display: inline-block;
-        height: 100%;
-        width: auto;
+    svg {
+        color: $brand-lime-green;
     }
     p {
         padding-left: 2vw;
@@ -751,7 +762,6 @@ body {
             font-size: x-large;
         }
         .contact-details-container {
-            width: 30vw;
             .contact-info-card {
                 font-size: 3vh;
                 p {
@@ -767,11 +777,10 @@ body {
                 font-size: 3vh;
             }
         }
-    }
-
-    #staff-footer-logo {
-        height: 15vh;
-        bottom: 5vh;
+        #staff-footer-logo {
+            right: 4vh;
+            bottom: 1vh;
+        }
     }
 
 }
