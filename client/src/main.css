@@ -136,9 +136,12 @@ body button:hover {
 }
 #home-sidebar a span {
   display: none;
+  padding: 5px;
+  margin-left: 5px;
 }
 #home-sidebar a:hover {
-  background: radial-gradient(whitesmoke 25%, #94d60a 100%);
+  background-color: whitesmoke;
+  box-shadow: inset 0 0 10px #94d60a;
   color: #021342;
 }
 
@@ -429,14 +432,15 @@ body button:hover {
 
 #contact-submit {
   grid-area: submit;
-  background-color: #94d60a;
+  border: none;
   color: whitesmoke;
-  border-radius: 4px;
+  background-color: #94d60a;
 }
 #contact-submit:hover {
   cursor: pointer;
   background-color: whitesmoke;
   color: #021342;
+  transform: scale(1.1);
 }
 
 .contact-form {

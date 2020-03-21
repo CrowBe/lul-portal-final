@@ -163,9 +163,13 @@ body {
         text-align: center;
         span {
             display: none;
+            padding: 5px;
+            margin-left: 5px;
         }
         &:hover {
-            background: radial-gradient($brand-white 25%, $brand-lime-green 100%);
+            // background: radial-gradient($brand-white 25%, $brand-lime-green 100%);
+            background-color: $brand-white;
+            box-shadow: inset 0 0 10px $brand-lime-green;
             color: $brand-navy-blue;
         }
     }
@@ -484,13 +488,14 @@ body {
 
 #contact-submit {
     grid-area: submit;
-    background-color: $brand-lime-green;
+    border: none;
     color: $brand-white;
-    border-radius: 4px;
+    background-color: $brand-lime-green;
     &:hover {
         cursor: pointer;
         background-color: $brand-white;
         color: $brand-navy-blue;
+        transform: scale(1.1);
     }
 }
 
