@@ -5,12 +5,12 @@ const SiteFooter = () => {
         <footer id="sitewide-footer">
             <div className="legal-information-container">
                 <div>
-                    <p>Copyright 2020 ©</p>
-                    <p>Looking Up Landscapes</p>
+                    <p>© 2020 Looking Up Landscapes</p>
+                    <p><a href="/terms-of-use" id="terms-link">Website Terms of Use</a></p>
                 </div>
                 <div>
-                    <p>License No: 34279C </p>
-                    <p>Abn: 63622774672</p>
+                    <p>ABN: 63 622 774 672</p>
+                    <p>License: 324794C</p>
                 </div>
             </div>
         </footer>

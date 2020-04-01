@@ -31,16 +31,15 @@ const ProjectSection = () => {
         <section name="projects" id="project-section-container" className="section-container">
             <div className="project-image-grid">
                 <div className="project-image-container">
-                    <img src={projectPhoto1} alt="Timber fencing stained reddish-brown beside tiled pool area." />
+                    <img src={projectPhoto2} alt="Timber fencing stained reddish-brown beside tiled pool area." />
                     <p className="project-image-text" id="image-1">
-                        Timber Screening
+                        Garden Design
                     </p>
                 </div>
                 <div className="project-image-container">
-                    <img src={projectPhoto2} alt="Rough sandstone blocks used for creating a tiered garden bed." />
+                    <img src={projectPhoto1} alt="Rough sandstone blocks used for creating a tiered garden bed." />
                     <p className="project-image-text" id="image-2">
-                        Garden Design
-                        
+                        Timber screening
                     </p>
                 </div>
                 <div className="project-image-container">

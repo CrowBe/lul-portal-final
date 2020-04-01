@@ -1,40 +1,54 @@
-@import url("https://fonts.googleapis.com/css?family=Ibarra+Real+Nova|Raleway&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Kaushan+Script|Poppins|Roboto&display=swap");
 body {
   margin: 0;
   max-width: 100%;
-  font-family: "Raleway", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 body h1 {
-  font-family: "Ibarra Real Nova", serif;
+  font-family: "Kaushan Script", cursive;
+  font-size: 6vh;
 }
 body h2 {
-  font-family: "Ibarra Real Nova", serif;
+  font-family: "Roboto", sans-serif;
+  font-size: 4vh;
 }
 body h3 {
-  font-family: "Ibarra Real Nova", serif;
+  font-family: "Roboto", sans-serif;
+  font-size: 3.5vh;
 }
 body h4 {
-  font-family: "Ibarra Real Nova", serif;
+  font-family: "Roboto", sans-serif;
+}
+body h5 {
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 0;
+  font-size: larger;
+}
+body p {
+  font-size: 3vh;
 }
 body button {
   color: whitesmoke;
+  background-color: #94d60a;
   padding: 10px;
   border-radius: 2px;
   border: none;
+  font-size: 2.5vh;
 }
 body button:hover {
   cursor: pointer;
   color: #021342;
+  background-color: whitesmoke;
   transform: scale(1.1, 1.1);
 }
 
 #main-nav-bar {
   position: fixed;
   display: flex;
+  justify-content: space-between;
   top: 0;
   height: 15vh;
   width: 100%;
-  justify-content: space-between;
   background-color: #021342;
   z-index: 1;
 }
@@ -48,15 +62,8 @@ body button:hover {
 #main-nav-bar #contact-button {
   height: 100%;
   display: flex;
+  margin-right: 3vw;
   align-items: center;
-}
-#main-nav-bar #contact-button button {
-  background-color: #94d60a;
-  font-size: 2vh;
-  margin-right: 5vw;
-}
-#main-nav-bar #contact-button button:hover {
-  background-color: whitesmoke;
 }
 
 #sitewide-footer {
@@ -68,30 +75,11 @@ body button:hover {
   color: whitesmoke;
   text-align: center;
 }
-
-.page {
-  position: absolute;
-  width: 100vw;
+#sitewide-footer #terms-link {
+  color: #94d60a;
 }
-
-.page-enter {
-  margin-top: -75vh;
-  transform: scale(0.8);
-}
-
-.page-enter-active {
-  transform: scale(1);
-  margin-top: 0;
-  transition: margin-top 500ms linear, transform 500ms linear;
-}
-
-.page-exit {
-  opacity: 1;
-}
-
-.page-exit-active {
-  opacity: 0;
-  transition: opacity 500ms;
+#sitewide-footer #terms-link:visited {
+  color: #94d60a;
 }
 
 .website {
@@ -105,17 +93,10 @@ body button:hover {
   padding-top: 15vh;
 }
 
-.sentinel {
-  height: 15vh;
-  margin-bottom: -15vh;
-  width: 100vw;
-  background-color: rgba(255, 255, 255, 0);
-}
-
 #home-sidebar {
   position: fixed;
   display: flex;
-  z-index: 2;
+  z-index: 3;
   right: 0vw;
   bottom: 50%;
   transform: translateY(50%);
@@ -163,7 +144,6 @@ body button:hover {
 }
 #main-poster-image-container h1 {
   text-align: center;
-  font-size: 6vh;
   margin: 0 10vw;
   opacity: 0.8;
 }
@@ -186,13 +166,13 @@ body button:hover {
 }
 #project-section-container .project-image-text {
   position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   opacity: 0.05;
-  top: 0;
-  left: 0;
   margin: 0;
   height: 100%;
   width: 100%;
@@ -220,7 +200,6 @@ body button:hover {
   flex-direction: column;
   justify-content: center;
   text-align: justify;
-  font-size: 2.5vh;
   padding: 0 8vw;
   width: 50vw;
 }
@@ -235,23 +214,12 @@ body button:hover {
   width: 60vw;
   text-align: center;
 }
-#about-page-link button {
-  color: whitesmoke;
-  border: 1px solid whitesmoke;
-  background-color: rgba(0, 0, 0, 0);
-  text-decoration: unset;
-}
-#about-page-link button:hover {
-  background-color: #94d60a;
-  color: whitesmoke;
-  border: none;
-}
 
 #about-icons-container {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  padding-top: 2vh;
+  margin-top: 3vh;
 }
 #about-icons-container div .about-icon {
   display: block;
@@ -309,14 +277,25 @@ body button:hover {
   width: 180px;
   margin: 5px;
   padding: 5px;
-  font-family: "Raleway", sans-serif;
 }
 .staff-card-details h4 {
   margin: 0;
+  font-size: 3vh;
+}
+.staff-card-details button {
+  max-width: 75%;
+  font-size: 2vh;
+}
+.staff-card-details p {
+  font-size: 2vh;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .staff-card-details span {
-  margin-top: 1vh;
-  font-size: 2vh;
+  font-size: 10px;
+  margin: 0;
 }
 
 .staff-section-footer {
@@ -326,29 +305,38 @@ body button:hover {
   height: 35vh;
   background-color: #021342;
   color: whitesmoke;
-  font-family: "Ibarra Real Nova", serif;
   z-index: 2;
-  text-align: justify;
 }
-.staff-section-footer .contact-details-container h4 {
-  display: block;
-  text-align: center;
+.staff-section-footer h3 {
+  margin: 2vh 0 0;
 }
-.staff-section-footer .contact-hours-container {
-  justify-content: flex-start;
-  z-index: 3;
+.staff-section-footer p {
+  font-size: 2vh;
+}
+.staff-section-footer .contact-info-container {
+  max-height: 23vh;
   border: none;
   box-shadow: none;
 }
-.staff-section-footer .contact-hours-container h4 {
-  margin-top: 2vh;
+.staff-section-footer .contact-hours-container {
+  max-height: 23vh;
+  border: none;
+  box-shadow: none;
 }
 .staff-section-footer #staff-footer-logo {
-  height: 10vh;
   width: auto;
   position: absolute;
   bottom: 2vh;
-  right: 2vh;
+  left: 2vh;
+  height: 10vh;
+}
+.staff-section-footer #staff-footer-logo img {
+  height: 85%;
+  width: auto;
+}
+.staff-section-footer #staff-footer-logo p {
+  font-size: 1.3vh;
+  margin: 0;
 }
 
 .legal-information-container {
@@ -357,6 +345,8 @@ body button:hover {
   display: flex;
   justify-content: space-around;
   bottom: 1vh;
+}
+.legal-information-container p {
   font-size: 1.5vh;
 }
 
@@ -365,53 +355,64 @@ body button:hover {
   padding: 1vh 8vw 10vh;
 }
 #about-page h2 {
-  font-family: "Raleway", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 #about-page p {
-  font-family: "Ibarra Real Nova", serif;
+  font-family: "Roboto", sans-serif;
 }
 #about-page p span {
   font-weight: bolder;
 }
 
-.contact-page-container {
+#terms-page {
   margin-top: 15vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  color: #021342;
-  font-family: "Ibarra Real Nova", serif;
-  height: 75vh;
+  padding: 1vh 8vw 10vh;
+}
+#terms-page p {
+  font-size: 2.5vh;
 }
 
-.contact-section-one {
+.contact-page-container {
+  margin-top: 15vh;
+  color: #021342;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   align-items: center;
-  width: 100vw;
+  height: 75vh;
 }
-.contact-section-one p {
-  width: 85%;
+.contact-page-container h2 {
+  margin: 2vh 0 0;
+  font-size: 4.5vh;
+}
+.contact-page-container h3 {
+  margin: 2vh 0 0;
+  font-size: 3.5vh;
+}
+.contact-page-container p {
+  font-size: 2vh;
+  margin: 0;
+  width: 80%;
   text-align: center;
-  font-size: 1.9vh;
-  font-family: "Raleway", sans-serif;
-  margin-top: 0;
+}
+
+.contact-form-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .contact-form-container {
-  display: flex;
   width: 80%;
+  display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   border: solid 1px #021342;
   border-radius: 25px;
   box-shadow: 0 0 6px #021342;
   padding-bottom: 2vh;
-}
-.contact-form-container h2 {
-  margin-bottom: 0;
+  text-align: center;
+  margin-top: 3vh;
 }
 
 #contact-name {
@@ -431,68 +432,69 @@ body button:hover {
 }
 
 #contact-submit {
-  grid-area: submit;
-  border: none;
-  color: whitesmoke;
-  background-color: #94d60a;
-}
-#contact-submit:hover {
-  cursor: pointer;
-  background-color: whitesmoke;
-  color: #021342;
-  transform: scale(1.1);
+  font-size: 2vh;
+  margin-top: 2vh;
 }
 
 .contact-form {
   display: grid;
-  grid-template-columns: 15vw 15vw 2vw 15vw 20vw;
+  margin-top: 1vh;
+  grid-template-columns: 15vw 15vw 2vw 15vw 15vw;
   grid-template-rows: auto;
-  grid-template-areas: "name name . message message" "number number . message message" "time time . message message" ". submit submit submit .";
+  grid-template-areas: "name name . message message" "number number . message message" "time time . message message";
   grid-row-gap: 2vh;
 }
+.contact-form textarea {
+  font-family: "Poppins", sans-serif;
+  font-size: 2vh;
+}
 .contact-form input {
-  font-family: "Raleway", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-size: 2vh;
 }
 .contact-form select {
-  font-family: "Raleway", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-size: 2vh;
 }
-.contact-form textarea {
-  font-family: "Raleway", sans-serif;
+
+.contact-details-section {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 3vh 0;
+  flex-grow: 1;
+}
+.contact-details-section h3 {
+  margin: 2vh 0 0;
 }
 
 .contact-info-container {
-  display: flex;
-  justify-content: space-evenly;
-  height: 25vh;
-}
-
-.contact-details-container {
   border: solid 0.5px #021342;
-  width: 42vw;
   border-radius: 10px;
   box-shadow: 0 0 6px #021342;
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
-.contact-details-container h4 {
   text-align: center;
-  margin: 2vh 0 0;
+  width: 45%;
+}
+.contact-info-container .contact-card-container {
+  width: 100%;
+}
+
+.contact-card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-grow: 1;
 }
 
 .contact-info-card {
-  height: 4vh;
   display: flex;
   align-items: center;
-  margin-top: 2vh;
-}
-.contact-info-card svg {
-  color: #94d60a;
 }
 .contact-info-card p {
-  padding-left: 2vw;
-  width: 30vw;
-  font-size: 2vh;
+  text-align: left;
+  margin: 0;
+  max-width: 75%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -500,69 +502,81 @@ body button:hover {
 .contact-info-card p:hover {
   overflow: visible;
 }
-
-#weekdays {
-  grid-area: weekdays;
-}
-
-#saturday {
-  grid-area: saturday;
-}
-
-#sunday {
-  grid-area: sunday;
-}
-
-#week-hours {
-  grid-area: week-hours;
-}
-
-#sat-hours {
-  grid-area: sat-hours;
-}
-
-#sun-hours {
-  grid-area: sun-hours;
+.contact-info-card svg {
+  color: #94d60a;
+  font-size: 3vh;
+  margin: 0 2vw;
 }
 
 .contact-hours-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   border: solid 0.5px #021342;
-  width: 42vw;
+  width: 45%;
   border-radius: 10px;
   box-shadow: 0 0 6px #021342;
 }
-
-.contact-hours-grid {
-  font-size: 2vh;
-  display: grid;
-  grid-template-columns: 18vw 1vw 18vw;
-  grid-template-rows: 5vh 5vh 5vh;
-  grid-template-areas: "weekdays . week-hours" "saturday . sat-hours" "sunday . sun-hours";
+.contact-hours-container .hours-cards-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-grow: 1;
+  width: 80%;
+}
+.contact-hours-container .hours-cards-container div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.contact-hours-container .hours-cards-container div p {
+  margin: 0;
+}
+.contact-hours-container .hours-cards-container div p:nth-of-type(odd) {
+  text-align: left;
+}
+.contact-hours-container .hours-cards-container div p:nth-of-type(even) {
+  text-align: right;
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  body {
-    font-size: x-large;
+  body h1 {
+    font-size: 7vh;
+  }
+  body button {
+    font-size: 3vh;
   }
 
-  #main-nav-bar #contact-button button {
-    font-size: 2.5vh;
+  #home-sidebar {
+    padding: 0;
+  }
+  #home-sidebar a {
+    padding: 10px;
+  }
+  #home-sidebar a svg {
+    font-size: 3vh;
   }
 }
 @media only screen and (min-width: 1025px) {
-  #main-nav-bar #contact-button button {
-    font-size: 2.5vh;
+  body h1 {
+    font-size: 8vh;
+  }
+  body h3 {
+    font-size: 4.5vh;
+  }
+  body p {
+    font-size: 4vh;
   }
 
-  #home-sidebar a svg {
-    display: none;
+  #main-nav-bar {
+    justify-content: space-between;
   }
-  #home-sidebar a span {
-    display: unset;
+  #main-nav-bar #contact-button {
+    margin-right: 5vw;
+  }
+  #main-nav-bar #contact-button button {
+    font-size: 3vh;
   }
 
   #project-section-container {
@@ -573,6 +587,18 @@ body button:hover {
   }
   #project-section-container .project-image-grid img {
     height: 30vh;
+  }
+
+  #home-sidebar a {
+    padding: 0;
+    margin: 0.8vh 0;
+  }
+  #home-sidebar a svg {
+    display: none;
+  }
+  #home-sidebar a span {
+    display: block;
+    font-size: 3vh;
   }
 
   #about-section-container {
@@ -590,20 +616,18 @@ body button:hover {
   }
   #about-section-container #about-text-container p {
     width: 50vw;
-    font-size: 3vh;
-    background-color: rgba(0, 0, 0, 0.219);
-    padding: 10px;
   }
 
   #about-icons-container {
     flex-direction: row;
   }
-  #about-icons-container div h3 {
-    font-size: 4vh;
-  }
 
   #staff-card-container {
     flex-direction: row;
+  }
+
+  .staff-card-details span {
+    font-size: 2vh;
   }
 
   .staff-card-image {
@@ -612,89 +636,97 @@ body button:hover {
 
   .contact-page-container {
     flex-direction: row-reverse;
+    margin-right: 10vw;
+    max-height: 75vh;
+  }
+  .contact-page-container p {
+    font-size: 3vh;
+  }
+  .contact-page-container h2 {
+    font-size: 5vh;
+  }
+
+  .contact-form-section {
     height: 75vh;
-    font-size: larger;
-    width: 95vw;
+    width: 60%;
   }
 
-  .contact-section-one {
-    display: flex;
-    width: 50vw;
-    height: 70vh;
-    justify-content: center;
-    flex-direction: column;
-    margin: 2vh 0;
-  }
-  .contact-section-one p {
-    width: 90%;
-    font-size: 2.5vh;
-    padding-bottom: 1vh;
-  }
-
-  .contact-info-container {
+  .contact-details-section {
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
     height: 75vh;
+    margin: 0;
   }
-  .contact-info-container .contact-details-container {
-    width: 35vw;
-    padding: 0 0 2vh;
-  }
-  .contact-info-container .contact-details-container .contact-info-card {
-    margin: 2vh 0 2vh 6vh;
-  }
-  .contact-info-container .contact-details-container h4 {
-    display: block;
-    text-align: center;
-  }
-  .contact-info-container .contact-details-container p {
-    font-size: 2.5vh;
-  }
-  .contact-info-container .contact-hours-container {
-    width: 35vw;
-    text-align: center;
-    padding: 0 0 2vh;
-  }
-  .contact-info-container .contact-hours-container span {
-    font-size: 3vh;
+  .contact-details-section div {
+    height: 45%;
+    width: 80%;
   }
 
   .contact-form-container {
     border-radius: 25px;
-    width: 90%;
     height: 45vh;
+  }
+  .contact-form-container select {
+    font-size: 3vh;
+  }
+  .contact-form-container input {
+    font-size: 3vh;
+  }
+  .contact-form-container textarea {
+    font-size: 3vh;
+  }
+  .contact-form-container #contact-submit {
+    font-size: 3vh;
   }
 
   .contact-form {
-    grid-template-columns: 8vw 8vw 2vw 8vw 12vw;
-    grid-template-rows: 4vh 4vh 4vh 6vh;
+    grid-template-columns: 8vw 8vw 2vw 8vw 8vw;
+    grid-template-rows: auto;
   }
-  .contact-form button {
-    padding: 2vh;
+
+  .contact-info-card p {
+    width: 100%;
+    flex-grow: 1;
   }
 
   .staff-section-footer {
-    font-family: "Raleway", sans-serif;
+    justify-content: space-evenly;
   }
-  .staff-section-footer h4 {
-    font-size: x-large;
-  }
-  .staff-section-footer .contact-details-container .contact-info-card {
-    font-size: 3vh;
-  }
-  .staff-section-footer .contact-details-container .contact-info-card p {
-    font-size: 3vh;
+  .staff-section-footer .contact-info-container {
+    max-height: 33vh;
+    width: 30vw;
+    margin: 0 2vw;
   }
   .staff-section-footer .contact-hours-container {
+    max-height: 33vh;
     width: 30vw;
+    margin: 0 2vw;
   }
-  .staff-section-footer .contact-hours-container .contact-hours-grid {
-    grid-template-columns: 10vw 1vw 10vw;
+  .staff-section-footer p {
     font-size: 3vh;
   }
   .staff-section-footer #staff-footer-logo {
-    right: 4vh;
-    bottom: 1vh;
+    position: relative;
+    left: unset;
+    bottom: unset;
+    padding-top: 5vh;
+  }
+  .staff-section-footer #staff-footer-logo img {
+    height: 20vh;
+    max-width: 30vw;
+  }
+  .staff-section-footer #staff-footer-logo p {
+    font-size: 2vh;
+  }
+
+  .legal-information-container div {
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+  }
+  .legal-information-container div p {
+    font-size: 2.5vh;
   }
 }
 

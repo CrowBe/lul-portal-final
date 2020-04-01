@@ -4,9 +4,8 @@ const ContactInfoCard = (props) => {
     const {Icon, info, name} = props;
 
     return (
-        <div className="contact-info-card" id={`card-${name}`}>
-            <Icon />
-            <p>{info}</p>
+        <div className="contact-info-card" id={`${name}-card`}>
+            <Icon /><p>{info}</p>
         </div>
     )
 }

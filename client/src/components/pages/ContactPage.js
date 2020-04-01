@@ -1,22 +1,20 @@
 import React from 'react';
-import ContactInfo from '../layout/ContactInfo';
 import ContactForm from '../common/ContactForm';
+import ContactHours from '../common/ContactHours';
+import ContactInfo from '../common/ContactInfo';
 
 const ContactPage = () => {
     return (
         <div className="contact-page-container">
-            <div className="contact-section-one">
-                <p>
-                    Your garden and landscaping needs are our priority!
-                    No job is too big or small. Get in touch with us
-                    today so we can start on your new outdoor space.
-                </p>
+            <div className="contact-form-section">
+                <h2>Contact Us</h2>
+                <p>We offer a full range of landscaping services with over 15 years of experience.</p>
                 <ContactForm />
             </div>
-            <div>
-                
+            <div className="contact-details-section">
+                <ContactInfo />
+                <ContactHours />
             </div>
-            <ContactInfo />
         </div>
     )
 }

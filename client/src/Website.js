@@ -5,6 +5,7 @@ import SideNavbar from './components/common/SideNavbar';
 import SiteFooter from './components/common/SiteFooter';
 import ContactPage from './components/pages/ContactPage';
 import AboutPage from './components/pages/AboutPage';
+import TermsPage from './components/pages/TermsPage'
 
 const Website = (props) => {
     const { history } = props;
@@ -16,6 +17,7 @@ const Website = (props) => {
             <Switch>
                 <Route path="/contact-form" component={ContactPage}/>
                 <Route path="/about-page" component={AboutPage} />
+                <Route path="/terms-of-use" component={TermsPage} />
                 <HomePage history={history} />
             </Switch>
             <footer>

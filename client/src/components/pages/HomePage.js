@@ -24,7 +24,7 @@ const HomePage = (props) => {
 	let options = {
 		root: null,
 		rootMargin: '0px',
-		threshold: [0.5, 0.6, 0.7, 0.8]
+		threshold: [0.5, 0.6, 0.7, 0.8, 0.9]
 	}
 	let observer = new IntersectionObserver(intersectHandlerDebounced, options);
 	useEffect(() => {
