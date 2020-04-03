@@ -3,4 +3,6 @@ client/node_modules/
 
 api/.env
 client/.env
-client/build
+
+client/build/
+api/build/

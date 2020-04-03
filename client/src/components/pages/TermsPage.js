@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const TermsPage = () => {
+    useEffect(() => {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    })
     return (
         <div id="terms-page">
             <h2>Terms of Use</h2>

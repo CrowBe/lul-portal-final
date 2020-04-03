@@ -14,7 +14,7 @@ body h2 {
 }
 body h3 {
   font-family: "Roboto", sans-serif;
-  font-size: 3.5vh;
+  font-size: 3vh;
 }
 body h4 {
   font-family: "Roboto", sans-serif;
@@ -141,6 +141,8 @@ body button:hover {
   top: 15vh;
   background-image: url("https://i1.wp.com/lookinguplandscapes.com.au/wp-content/uploads/2018/01/House-slide-1.jpg?fit=1621%2C1080");
   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 #main-poster-image-container h1 {
   text-align: center;
@@ -200,7 +202,7 @@ body button:hover {
   flex-direction: column;
   justify-content: center;
   text-align: justify;
-  padding: 0 8vw;
+  padding: 0 6vw;
   width: 50vw;
 }
 #about-text-container span {
@@ -240,6 +242,7 @@ body button:hover {
 #about-icons-container div h3 {
   margin-top: 1vh;
   text-align: center;
+  font-size: 3vh;
 }
 
 #staff-section-container {
@@ -494,13 +497,15 @@ body button:hover {
 .contact-info-card p {
   text-align: left;
   margin: 0;
-  max-width: 75%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .contact-info-card p:hover {
   overflow: visible;
+  word-wrap: break-word;
+  white-space: unset;
+  text-overflow: unset;
 }
 .contact-info-card svg {
   color: #94d60a;
@@ -626,8 +631,8 @@ body button:hover {
     flex-direction: row;
   }
 
-  .staff-card-details span {
-    font-size: 2vh;
+  .staff-card-details {
+    font-size: 15px;
   }
 
   .staff-card-image {
@@ -717,7 +722,8 @@ body button:hover {
     max-width: 30vw;
   }
   .staff-section-footer #staff-footer-logo p {
-    font-size: 2vh;
+    font-size: 3vh;
+    text-align: center;
   }
 
   .legal-information-container div {

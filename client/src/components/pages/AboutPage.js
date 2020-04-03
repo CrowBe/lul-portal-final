@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const AboutPage = () => {
+    useEffect(() => {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    })
     return (
         <div id="about-page">
             <h2>About Us</h2>

@@ -29,7 +29,7 @@ body {
     }
     h3 {
         font-family: $serif-font;
-        font-size: 3.5vh;
+        font-size: 3vh;
     }
     h4 {
         font-family: $serif-font;
@@ -172,6 +172,8 @@ body {
     top: 15vh;
     background-image: url('https://i1.wp.com/lookinguplandscapes.com.au/wp-content/uploads/2018/01/House-slide-1.jpg?fit=1621%2C1080');
     background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     h1 {
         text-align: center;
         margin: 0 10vw;
@@ -233,7 +235,6 @@ body {
     background-position: left;
     color: $brand-white;
     position: relative;
-    
 }
 
 #about-text-container {
@@ -241,7 +242,7 @@ body {
     flex-direction: column;
     justify-content: center;
     text-align: justify;
-    padding: 0 8vw;
+    padding: 0 6vw;
     width: 50vw;
     span {
         color: $brand-lime-green;
@@ -281,6 +282,7 @@ body {
         h3 {
             margin-top: 1vh;
             text-align: center;
+            font-size: 3vh;
         }
     }
 }
@@ -555,12 +557,14 @@ body {
     p {
         text-align: left;
         margin: 0;
-        max-width: 75%;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
         &:hover {
             overflow: visible;
+            word-wrap: break-word;
+            white-space: unset;
+            text-overflow: unset;
         }
     }
     svg {
@@ -700,9 +704,7 @@ body {
     }
 
     .staff-card-details {
-        span {
-            font-size: 2vh;
-        }
+        font-size: 15px;
     }
 
     .staff-card-image {
@@ -792,7 +794,8 @@ body {
                 max-width: 30vw;
             }
             p {
-                font-size: 2vh;
+                font-size: 3vh;
+                text-align: center;
             }
         }
     }

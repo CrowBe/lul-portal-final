@@ -35,8 +35,9 @@ const StaffSection = () => {
                         <h4>Jon McGill</h4>
                         <span>Co-owner & Head Landscaper</span>
                         <div className="staff-contact-info" >
+                            <p>Contact Information:</p>
                             <button onClick={showContactInfo} name="jon">
-                                Show Contact Information
+                                Click to Show
                             </button>
                         </div>
                     </div>
@@ -49,8 +50,9 @@ const StaffSection = () => {
                         <h4>Bel McGill</h4>
                         <span>Co-owner & Business Administrator</span>
                         <div className="staff-contact-info" >
+                            <p>Contact Information:</p>
                             <button onClick={showContactInfo} name="bel">
-                                Show Contact Information
+                                Click to Show
                             </button>
                         </div>
                     </div>
@@ -61,7 +63,7 @@ const StaffSection = () => {
                 <ContactHours />
                 <div id="staff-footer-logo">
                     <img src={whiteLogoNavy} alt="Outline of house with a leaf incorporated into the lines. The words Looking Up Landscapes in bold."/>
-                    <p>"If your landscapes are looking down, look us up!"</p>
+                    <p>"Landscapes You Can Live In"</p>
                 </div>
             </div>
         </section>
