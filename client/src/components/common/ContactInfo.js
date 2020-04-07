@@ -1,7 +1,8 @@
 import React from 'react';
 import ContactInfoCard from './ContactInfoCard';
-import { FaMobileAlt, FiGlobe } from "react-icons/fa";
+import { FaMobileAlt } from "react-icons/fa";
 import { MdPhoneInTalk, MdEmail } from "react-icons/md";
+// FiGlobe
 
 const ContactInfo = () => {
     return (
