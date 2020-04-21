@@ -1,8 +1,17 @@
 import express from 'express';
 import cors from 'cors';
 import routes from "./routes/index";
+import mongoose from 'mongoose';
 require('dotenv').config()
 
+mongoose.connect('mongodb://localhost/test', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
+
+mongoose.Promise = global.Promise;
+
+mongoose.connection.on("error", error => console.log(error));
 
 // Create a new Express app
 const app = express();

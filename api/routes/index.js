@@ -1,7 +1,6 @@
 import express from 'express';
 import { checkJwt, checkScopes } from './../middleware/auth_middleware';
 import errorMiddleware from './../middleware/error_middleware';
-import mailHandler from '../controllers/mail_controller';
 import jobRoutes from './job_routes';
 
 const router = express.Router();
@@ -14,7 +13,6 @@ router.get("/api/external", checkJwt, (req, res) => {
   });
 });
 
-router.post("/api/mail-request", mailHandler)
 
 // Add authentication to these routes once set up
 router.use('/api', checkJwt, jobRoutes);
