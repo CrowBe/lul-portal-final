@@ -1,7 +1,6 @@
 import express from 'express';
 import cors from 'cors';
 import routes from "./routes/index";
-import nodemailer from 'nodemailer';
 require('dotenv').config()
 
 
@@ -12,7 +11,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
 // Accept cross-origin requests from the frontend app
-app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors({ origin: ['http://localhost:3000', 'https://lookinguplandscapes.com.au'] }));
 
 // Define an endpoint that must be called with an access token
 app.use(routes);

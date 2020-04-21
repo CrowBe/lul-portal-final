@@ -4,5 +4,8 @@ client/node_modules/
 api/.env
 client/.env
 
-client/build/
+
 api/build/
+client/build/
+
+api/gmail-keyfile.json

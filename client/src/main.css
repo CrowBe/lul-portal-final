@@ -132,6 +132,10 @@ body button:hover {
   color: whitesmoke;
 }
 
+.fb-page {
+  height: 100vh;
+}
+
 #main-poster-image-container {
   display: flex;
   align-items: center;
@@ -543,6 +547,10 @@ body button:hover {
 }
 .contact-hours-container .hours-cards-container div p:nth-of-type(even) {
   text-align: right;
+}
+
+#portal-nav-bar {
+  margin-top: 15vh;
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {

@@ -4,7 +4,6 @@ import { useAuth0 } from "../../config/react-auth0-spa";
 
 const PortalNavBar = () => {
   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
-
   return (
     <nav id='portal-nav-bar'>
       {!isAuthenticated && (
@@ -14,9 +13,10 @@ const PortalNavBar = () => {
       {isAuthenticated && <button onClick={() => logout()}>Log out</button>}
       {isAuthenticated && (
       <span>
-        <Link to="/portal">Home</Link>
-        <Link to="/portal/profile">Profile</Link>
-        <Link to="/portal/external-api">External API</Link>
+        <Link to="/portal"><button>Home</button></Link>
+        <Link to="/portal/profile"><button>Profile</button></Link>
+        <Link to="/portal/external-api"><button>External API</button></Link>
+        <Link to="/portal/new-job"><button>New Job</button></Link>
       </span>
     )}
     </nav>

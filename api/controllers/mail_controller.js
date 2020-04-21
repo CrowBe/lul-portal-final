@@ -1,38 +1,34 @@
-import nodemailer from 'nodemailer';
+import { Base64 } from 'js-base64';
+import { google } from 'googleapis';
+const key = require('./gmail-keyfile.json');
 
-const mailHandler = (req, res) => {
-    const transporter = nodemailer.createTransport({
-        host: "lookinguplandscapes.com.au",
-        port: 465,
-        secure: true, // upgrade later with STARTTLS
-        auth: {
-          user: "admin@lookinguplandscapes.com.au",
-          pass: process.env.EMAIL_PASS
-        }
-    });
-
-    const { name, number, time, message }  = req.body;
-
-    const messageString = `Website Request: \n
-    ${name} has requested you contact them at ${time} on ${number}.\n
-    They sent this message: ${message}`;
-
-    const mailOptions = {
-        from: 'admin@lookinguplandscapes.com.au', // sender address
-        to: 'office@lookinguplandscapes.com.au', // list of receivers
-        subject: 'Website Request', // Subject line
-        text: messageString, // plaintext body
-        // html: // You can choose to send an HTML body instead
-    };
-
-    transporter.sendMail(mailOptions, function(error, info){
-        if(error){
-            console.log(error);
-            res.json({mailed: 'error'});
-        }else{
-            console.log('Message sent: ' + info.response);
-            res.json({mailed: info.response});
-        };
+const mailHandler = async (req, res) => {
+    const { name, number, time, message} = req.body;
+    const base64EncodedEmail = Base64.encode(
+        "From: admin@lookinguplandscapes.com.au\r\n" +
+        "To: bennycrow91@gmail.com\r\n" +
+        "Subject: Website Request\r\n\r\n" +
+      
+        `${name} would like to be contacted on ${number}\r\n` +
+        `They are available ${time} and left this message:\r\n` +
+        `${message}` // name, number, time, message
+    ).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+    const scopes = 'https://www.googleapis.com/auth/gmail.send';
+    const jwt = new google.auth.JWT(key.client_email, null, key.private_key, scopes);
+    jwt.authorize()
+    .then(data => {
+        google.gmail({
+            version: "v1",
+            auth: jwt
+        }).users.messages.send({
+            'userId': "admin@lookinguplandscapes.com.au",
+            'resource': {
+            'raw': base64EncodedEmail
+            }
+        });
+    })
+    .catch(err => {
+            console.log(err);
     });
 }
 

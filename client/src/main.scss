@@ -162,6 +162,9 @@ body {
     color: $brand-white;
     
 }
+.fb-page {
+    height: 100vh;
+}
 
 #main-poster-image-container {
     display: flex;
@@ -605,6 +608,11 @@ body {
             }
         }
     }
+}
+
+
+#portal-nav-bar{
+    margin-top: 15vh;
 }
 
 

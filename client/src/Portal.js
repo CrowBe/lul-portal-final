@@ -1,11 +1,12 @@
 import React from 'react';
 import { Switch } from 'react-router-dom';
 import PrivateRoute from './components/common/PrivateRoute';
-import PortalNavBar from './components/common/PortalNavbar';
-import Profile from './components/pages/Profile';
-import ExternalApi from './components/pages/ExternalApi';
+import PortalNavBar from './components/portal/PortalNavbar';
+import Profile from './components/portal/Profile';
+import ExternalApi from './components/portal/ExternalApi';
+import NewJob from './components/portal/NewJob';
 
-const Portal = (props) => {
+const Portal = () => {
     return (
         <div className="portal" >
             <header>
@@ -14,6 +15,7 @@ const Portal = (props) => {
             <Switch >
                 <PrivateRoute path="/portal/profile" component={Profile} />
                 <PrivateRoute path="/portal/external-api" component={ExternalApi} />
+                <PrivateRoute path="/portal/new-job" component={NewJob} />
             </Switch>
         </div>
     )

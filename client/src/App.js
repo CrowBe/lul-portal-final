@@ -1,19 +1,18 @@
 import React from 'react';
-import { Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import MainNavBar from './components/common/MainNavBar';
 import Website from './Website';
 import Portal from './Portal';
 
-const App = (props) => {
-  const { history } = props;
+const App = () => {
   return (
-    <Router history={history}>
+    <Router>
       <header>
         <MainNavBar />
       </header>
       <Switch>
         <Route path="/portal" component={Portal} />
-        <Route path="/" component={Website} history={history} />
+        <Route path="/" component={Website} />
       </Switch>
     </Router>
   );

@@ -12,7 +12,10 @@ router.get('/jobs', (req, res) => {
 
 router.post('/job', (req, res) => {
     // Pull the required information from the request body
+    const { firstName, surname } = req.body;
+    console.log(`${firstName} ${surname}`)
     // Create an initial job document, setting the job stage to 0 = "request stage"
+    res.json({success: "success"})
     // Save the job to the database
     // reroute user to /job/:id with the new job id as :id parameter
 });

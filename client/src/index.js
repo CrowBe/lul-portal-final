@@ -4,8 +4,8 @@ import App from './App';
 import './main.css'
 import * as serviceWorker from './serviceWorker';
 import { Auth0Provider } from './config/react-auth0-spa';
-import dotenv from 'dotenv';
 import history from './config/history';
+import dotenv from 'dotenv';
 dotenv.config();
 
 // A function that routes the user to the right place after login
@@ -25,7 +25,7 @@ ReactDOM.render(
     audience={process.env.REACT_APP_AUTH_AUDIENCE}
     onRedirectCallback={onRedirectCallback}
   >
-    <App history={history}/>
+    <App />
   </Auth0Provider>,
   document.getElementById("root")
 );

@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react';
 import AwesomeDebouncePromise from 'awesome-debounce-promise';
-import MainSection from '../layout/MainSection';
-import ProjectSection from '../layout/ProjectSection';
-import AboutSection from '../layout/AboutSection';
-import StaffSection from '../layout/StaffSection';
+import { useLocation } from "react-router-dom";
+import MainSection from './MainSection';
+import ProjectSection from './ProjectSection';
+import AboutSection from './AboutSection';
+import StaffSection from './StaffSection';
 
 
-const HomePage = (props) => {
-	const {history} = props;
+const HomePage = () => {
+
 	const intersectHandler = (entries) => {
 		entries.forEach(entry => {
 			if (entry.isIntersecting) {
@@ -21,18 +22,22 @@ const HomePage = (props) => {
 	}
 
 	const intersectHandlerDebounced = AwesomeDebouncePromise(intersectHandler, 500);
+
 	let options = {
 		root: null,
 		rootMargin: '0px',
 		threshold: [0.5, 0.6, 0.7, 0.8, 0.9]
 	}
+
 	let observer = new IntersectionObserver(intersectHandlerDebounced, options);
+
+	let location = useLocation();
 	useEffect(() => {
 		let targets = document.querySelectorAll('.section-container');
 		for (let target of targets) {
 			observer.observe(target);
 		}
-		const { hash } = history.location;
+		let { hash } = location;
 		if (hash) {
 			let node = document.getElementsByName(hash.replace('#', ''));
 			if (node.length > 0) {

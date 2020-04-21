@@ -1,7 +1,7 @@
 import React from 'react';
-import ContactForm from '../common/ContactForm';
-import ContactHours from '../common/ContactHours';
-import ContactInfo from '../common/ContactInfo';
+import ContactForm from './ContactForm';
+import ContactHours from './ContactHours';
+import ContactInfo from './ContactInfo';
 
 const ContactPage = () => {
     return (
