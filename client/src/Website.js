@@ -6,7 +6,7 @@ import SiteFooter from './components/common/SiteFooter';
 import ContactPage from './components/website/ContactPage';
 import AboutPage from './components/website/AboutPage';
 import TermsPage from './components/website/TermsPage';
-import ProjectPage from './components/website/ProjectPage';
+// import ProjectPage from './components/website/ProjectPage';
 
 const Website = () => {
     return (
@@ -18,7 +18,7 @@ const Website = () => {
                 <Route path="/contact-form" component={ContactPage}/>
                 <Route path="/about-page" component={AboutPage} />
                 <Route path="/terms-of-use" component={TermsPage} />
-                <Route path="/projects-feed" component={ProjectPage} />
+                {/* <Route path="/projects-feed" component={ProjectPage} /> */}
                 <HomePage />
             </Switch>
             <footer>

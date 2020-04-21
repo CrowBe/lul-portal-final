@@ -11,35 +11,15 @@ const ContactForm = () => {
     if (redirect) {
       return (<Redirect to={redirect}/>)
     }
-
-    const sendMail = async (e) => {
-        e.preventDefault();
-        const response = await fetch('/api/mail-request', {
-          method: 'POST',
-          cache: 'no-cache',
-          headers: {
-            'Content-Type': 'application/json'
-            // 'Content-Type': 'application/x-www-form-urlencoded',
-          },
-          redirect: 'follow', // manual, *follow, error
-          referrerPolicy: 'no-referrer', // no-referrer, *client
-          body: JSON.stringify({ name, number, time, message }) // body data type must match "Content-Type" header
-        });
-        console.log(response)
-        // response.json().then(value => {
-        //   if (value.err) {
-        //     alert("Sorry, your message doesn't appear to have sent properly. Please try again, or consider emailing us directly via office@lookinguplandscapes.com.au")
-        //   } else {
-        //     alert("Your message has been sent.");
-        //     setRedirect('/');
-        //   }
-        // })
-      }
+    // When response received confirming email sent redirect to home.
+    if (false) {
+        setRedirect("/");
+    }
 
     return (
         <div className="contact-form-container">
             <h3>Send Us A Message</h3>
-            <form className="contact-form" id="public-contact" onSubmit={sendMail}>
+            <form className="contact-form" id="public-contact">
                 <input type="text" name="name" id="contact-name" placeholder="Name*" onChange={(e) => setName(e.target.value)} value={name} required/>
                 <input type="text" name="number" id="contact-number" placeholder="Phone Number*" onChange={(e) => setNumber(e.target.value)} value={number} required/>
                 <select name="time" id="contact-time" onChange={(e) => setTime(e.target.value)} value={time}>
