@@ -1,6 +1,6 @@
 import { Base64 } from 'js-base64';
 import { google } from 'googleapis';
-const key = require('./gmail-keyfile.json');
+const key = require('../gmail-keyfile.json');
 
 const mailHandler = async (req, res) => {
     const { name, number, time, message} = req.body;
