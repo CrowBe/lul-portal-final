@@ -19,9 +19,9 @@ const Website = () => {
                 <Route path="/about-page" component={AboutPage} />
                 <Route path="/terms-of-use" component={TermsPage} />
                 {/* <Route path="/projects-feed" component={ProjectPage} /> */}
-                <HomePage />
+                <Route path="/" component={HomePage} exact/>
             </Switch>
-            <footer>
+            <footer>s
                 <SiteFooter />
             </footer>
         </div>
