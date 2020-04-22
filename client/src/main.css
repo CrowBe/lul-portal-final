@@ -443,7 +443,7 @@ body button:hover {
   margin-top: 2vh;
 }
 
-.contact-form {
+#contact-form {
   display: grid;
   margin-top: 1vh;
   grid-template-columns: 15vw 15vw 2vw 15vw 15vw;
@@ -451,17 +451,20 @@ body button:hover {
   grid-template-areas: "name name . message message" "number number . message message" "time time . message message";
   grid-row-gap: 2vh;
 }
-.contact-form textarea {
+#contact-form textarea {
   font-family: "Poppins", sans-serif;
   font-size: 2vh;
 }
-.contact-form input {
+#contact-form input {
   font-family: "Poppins", sans-serif;
   font-size: 2vh;
 }
-.contact-form select {
+#contact-form select {
   font-family: "Poppins", sans-serif;
   font-size: 2vh;
+}
+#contact-form #honeypot {
+  display: none;
 }
 
 .contact-details-section {
@@ -693,9 +696,18 @@ body button:hover {
     font-size: 3vh;
   }
 
-  .contact-form {
+  #contact-form {
     grid-template-columns: 8vw 8vw 2vw 8vw 8vw;
     grid-template-rows: auto;
+  }
+  #contact-form textarea {
+    font-size: 3vh;
+  }
+  #contact-form input {
+    font-size: 3vh;
+  }
+  #contact-form select {
+    font-size: 3vh;
   }
 
   .contact-info-card p {

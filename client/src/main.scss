@@ -496,7 +496,7 @@ body {
     margin-top: 2vh;
 }
 
-.contact-form {
+#contact-form {
     display: grid;
     margin-top: 1vh;
     grid-template-columns: 15vw 15vw 2vw 15vw 15vw;
@@ -517,6 +517,9 @@ body {
     select {
         font-family: $sans-font;
         font-size: 2vh;
+    }
+    #honeypot {
+        display: none;
     }
 }
 
@@ -765,9 +768,18 @@ body {
         }
     }
 
-    .contact-form {
+    #contact-form {
         grid-template-columns: 8vw 8vw 2vw 8vw 8vw;
         grid-template-rows: auto;
+        textarea {
+            font-size: 3vh;
+        }
+        input {
+            font-size: 3vh;
+        }
+        select {
+            font-size: 3vh;
+        }
     }
 
     .contact-info-card {
