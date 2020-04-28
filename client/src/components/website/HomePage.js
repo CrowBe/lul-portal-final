@@ -8,7 +8,8 @@ import StaffSection from './StaffSection';
 
 
 const HomePage = () => {
-
+	let location = useLocation();
+	  
 	const intersectHandler = (entries) => {
 		entries.forEach(entry => {
 			if (entry.isIntersecting) {
@@ -31,7 +32,6 @@ const HomePage = () => {
 
 	let observer = new IntersectionObserver(intersectHandlerDebounced, options);
 
-	let location = useLocation();
 	useEffect(() => {
 		let targets = document.querySelectorAll('.section-container');
 		for (let target of targets) {
@@ -47,6 +47,7 @@ const HomePage = () => {
 				});
 			}
 		}
+
 	})
 	return (
 		<div className='home-page-wrapper'>

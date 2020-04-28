@@ -1,11 +1,13 @@
 import React from 'react';
-// const videoURL = 'https://drive.google.com/file/d/17lqdAAMvUATZ_tYehANOA2d0NAebNPUL/view?usp=sharing'
+import posterImage from '../../images/wide-video-poster.png';
+const videoURL = 'https://drive.google.com/uc?id=1enQ_oifL_fqMt5c1Sg6VnveCnIJbucof'
 
 const MainSection = () => {
+    
     return (
         <section name="home" id="main-section-container" className="section-container">
-            {/* <iframe width="560" height="315" src="https://www.youtube.com/embed/6glb4tHdS44?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
             <div id="main-poster-image-container">
+                <video loop={true} muted={true} autoPlay poster={posterImage} className="fullscreen-bg-video" src={videoURL} />
                 <h1 id="main-section-key-phrase">Landscapes You Can Live In</h1>
             </div>
         </section>

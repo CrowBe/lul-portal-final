@@ -38,7 +38,7 @@ const AboutSection = () => {
                     <h3>Maintain</h3>
                 </div>
             </div>
-            <Link id="about-page-link" to="/about-page"><button>Learn More...</button></Link>
+            <Link id="about-page-link" to="/about-page"><button>Learn More</button></Link>
         </section>
     )
 }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 import projectPhoto1 from '../../images/project-photo-1.jpg';
 import projectPhoto2 from '../../images/project-photo-2.jpg';
 import projectPhoto3 from '../../images/project-photo-3.jpg';
@@ -69,6 +70,7 @@ const ProjectSection = () => {
                     </p>
                 </div>
             </div>
+            <Link id="project-page-link" to="/projects-page"><button>More Projects</button></Link>
         </section>
     )
 }

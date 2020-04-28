@@ -130,37 +130,39 @@ body button:hover {
   justify-content: center;
   align-items: center;
   color: whitesmoke;
-}
-
-.fb-page {
-  height: 100vh;
+  overflow: hidden;
 }
 
 #main-poster-image-container {
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   height: 75vh;
   width: 100vw;
-  top: 15vh;
-  background-image: url("images/House-slide-1.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+}
+#main-poster-image-container .fullscreen-bg-video {
+  position: absolute;
+  top: 0;
+  height: 75vh;
+  width: auto;
 }
 #main-poster-image-container h1 {
-  text-align: center;
-  margin: 0 10vw;
   opacity: 0.8;
+  max-width: 80%;
+  text-align: center;
 }
 
 #project-section-container {
+  position: relative;
   justify-content: space-evenly;
 }
 #project-section-container .project-image-grid {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  padding-bottom: 8vh;
 }
 #project-section-container .project-image-grid img {
   display: block;
@@ -193,6 +195,13 @@ body button:hover {
   opacity: 1;
 }
 
+#project-page-link {
+  position: absolute;
+  bottom: 2vh;
+  left: 10vw;
+  text-align: center;
+}
+
 #about-section-container {
   background-image: url("images/about-backdrop.jpg");
   background-size: 75vh auto;
@@ -216,8 +225,7 @@ body button:hover {
 #about-page-link {
   position: absolute;
   bottom: 2vh;
-  left: 0;
-  width: 60vw;
+  left: 10vw;
   text-align: center;
 }
 
@@ -357,18 +365,23 @@ body button:hover {
   font-size: 1.5vh;
 }
 
-#about-page {
+.about-page {
   margin-top: 15vh;
   padding: 1vh 8vw 10vh;
 }
-#about-page h2 {
+.about-page h2 {
   font-family: "Poppins", sans-serif;
 }
-#about-page p {
+.about-page p {
   font-family: "Roboto", sans-serif;
+  font-size: 2.5vh;
 }
-#about-page p span {
+.about-page p span {
   font-weight: bolder;
+}
+
+.projects-page {
+  padding-top: 15vh;
 }
 
 #terms-page {
@@ -595,14 +608,29 @@ body button:hover {
     font-size: 3vh;
   }
 
+  #main-poster-image-container .fullscreen-bg-video {
+    position: absolute;
+    top: -5vh;
+    height: auto;
+    width: 100vw;
+  }
+  #main-poster-image-container h1 {
+    opacity: 0.8;
+    max-width: 80%;
+    text-align: center;
+  }
+
   #project-section-container {
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   #project-section-container .project-image-grid {
     flex-direction: row;
+    width: 90%;
   }
   #project-section-container .project-image-grid img {
-    height: 30vh;
+    height: 28vh;
   }
 
   #home-sidebar a {

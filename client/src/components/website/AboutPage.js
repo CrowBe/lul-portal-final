@@ -5,7 +5,7 @@ const AboutPage = () => {
         window.scrollTo({top: 0, behavior: 'smooth'});
     })
     return (
-        <div id="about-page">
+        <div className="about-page">
             <h2>About Us</h2>
             <p>
                 In 2005, while working for the original McGill family business The North Rocks Greenery,
