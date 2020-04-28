@@ -381,7 +381,12 @@ body button:hover {
 }
 
 .projects-page {
+  display: flex;
   padding-top: 15vh;
+  height: 75vh;
+}
+.projects-page .fb-page .fb_iframe_widget .fb_iframe_widget_fluid {
+  transform: scale(1.2);
 }
 
 #terms-page {
