@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-const NewJob = () => {
+const JobIndex = () => {
     return (
         <div></div>
     )
 }
 
-export default NewJob;
+export default JobIndex;
