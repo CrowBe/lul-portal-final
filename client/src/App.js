@@ -14,7 +14,7 @@ const App = () => {
 			<MainNavBar />
 			<PortalNavBar />
       	</header>
-			<Switch >
+			<Switch>
 				<PrivateRoute path="/portal/profile" component={Profile} />
 				<PrivateRoute path="/portal/external-api" component={ExternalApi} />
 				<PrivateRoute path="/portal/new-job" component={NewJob} />
